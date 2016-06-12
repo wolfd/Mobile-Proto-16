@@ -16,13 +16,14 @@ We will be using Android Studio as our IDE, even though (for this class) we won'
 
 This will create a basic Android application skeleton for you. We won't be using the skeleton, so we'll create our own Module.
 
-1. Click File > New > Module. Select Java Library and click Next. For Java class name, use "HelloWorld". Click Finish. You should now see a Java module (in a folder with whatever name you gave it) inside your Android project.
+1. Click File > New > Module.
+2. Select Java Library and click Next.
+3. For Java class name, use "HelloWorld". Click Finish.
+4. You should now see a Java module (in a folder with whatever name you gave it) inside your Android project.
 
 ### Hello World
 
 Copy paste into `HelloWorld.java` and read over the following code:
-
-### Hello World
 
 ```java
 public class HelloWorld {
@@ -40,4 +41,32 @@ A window button should appear next to the main method header. Click it to run yo
 Hello World!
 ```
 
-On the dropdown to the left of the run button in the menu header (should say "app"), click "Save "Hello World" configuration".
+Don't worry too much yet about what all the words in `public static void main(String[] args)` mean. For now, just remember that this is the **main method**, and that every java program must have a main method defined. This main method is what the Java Virtual Machine runs initially, and all subsequent code eventually stems from the main method.
+
+### Fraction
+
+Create a new class called `Fraction`.
+
+#### At the end of class
+
+Your `Fraction` class should look something like this:
+
+```
+package com.example;
+
+public class Fraction {
+
+    private int numerator;
+    private int denominator;
+
+    public Fraction(int num, int den) {
+        numerator = num;
+        denominator = den;
+    }
+
+    public String toString() {
+        return Integer.toString(numerator) + "/" + Integer.toString(denominator);
+    }
+
+}
+```
