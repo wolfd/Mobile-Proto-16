@@ -1,4 +1,22 @@
-# Finish implementing the Fraction class
+# The `Fraction` class
+
+Create a new class called `Fraction`.
+```
+public class Fraction {
+
+    private int numerator;
+    private int denominator;
+
+    public String toString() {
+        return Integer.toString(numerator) + "/" + Integer.toString(denominator);
+    }
+
+}
+```
+
+#### Implement a constructor
+
+In the arguments, have numerator come first.
 
 #### `gcd`
 
@@ -57,3 +75,6 @@ public class FractionTester {
 }
 
 ```
+
+# Animal Farm
+
