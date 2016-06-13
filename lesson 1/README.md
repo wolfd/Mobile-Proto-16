@@ -266,31 +266,4 @@ c.turnOn();
 ```
 
 **Make your `Account` class `abstract`. Confirm that you can't initalize it anymore.**
-
-### Fraction
-
-Create a new class called `Fraction`.
-
-#### At the end of class
-
-Your `Fraction` class should look something like this:
-
-```
-package com.example;
-
-public class Fraction {
-
-    private int numerator;
-    private int denominator;
-
-    public Fraction(int num, int den) {
-        numerator = num;
-        denominator = den;
-    }
-
-    public String toString() {
-        return Integer.toString(numerator) + "/" + Integer.toString(denominator);
-    }
-
-}
 ```
