@@ -55,20 +55,8 @@ public class Account {
     private MoneySaver owner;
     private long amount;
 
-    public Account(long amount, MoneySaver owner) {
-    }
-
     public String toString() {
         return "Account owner: " + owner.getName() + ", Account Balance: $" + amount;
-    }
-
-    public void deposit(long money) {
-    }
-
-    public long getAmount() {
-    }
-
-    public void setAmount(long amount) {
     }
 
     public static Account largerAccount(Account acc1, Account acc2) {
@@ -120,17 +108,17 @@ public class MoneySaver {
 
 ##### Constructors
 
-Each of these classes has a constructor (in `Account`, the constructor is `public Account(long amount, MoneySaver owner)`). The constructor is a special method used to initialize instances of your class (just like Python's `__init__` method).
+The constructor is a special method used to initialize instances of your class (just like Python's `__init__` method). Classes by default inherit a no-argument constructor from the default `Object` class. Often, you will want to initialize your object with some values. In this case you must define your own constructor.
 
-**Go ahead and implement the `Account`'s constructor.**
+**Go ahead and implement the `Account`'s constructor. It should have input arguments `long amount, MoneySaver owner`**
 
 #### Fields
 
-You'll notice both classes also have fields. Fields are either attributes of members of a class (an `Account` **has a** `amount`) or things that belong to the class. Fields should almost exclusively be `private` unless you have a *really* good reason to make it public. If you want an outside class to be able to access a field, you must create public getter/setter methods.
+You'll notice both classes also have fields. Fields are either attributes of members of a class (an `Account` **has an** `amount`) or things that belong to the class. Fields should almost exclusively be `private` unless you have a *really* good reason to make it `public`. If you want an outside class to be able to access a field, you must create public getter/setter methods.
 
-**Go ahead and implement the `get` and `setAmount` methods in `Account`.**
+**Define and implement the `getAmount` and `setAmount` methods in `Account`. Make sure they have appropriate return types and input arguments.**
 
-Add the following to your main method to test your code so far:
+Add the following to your main method (`public static void main(String[] args)`) to test your code so far:
 
 ```
 MoneySaver jim = new MoneySaver("Jim", 100);
