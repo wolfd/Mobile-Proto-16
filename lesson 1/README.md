@@ -108,13 +108,17 @@ public class MoneySaver {
 
 ##### Constructors
 
-The constructor is a special method used to initialize instances of your class (just like Python's `__init__` method). Classes by default inherit a no-argument constructor from the default `Object` class. Often, you will want to initialize your object with some values. In this case you must define your own constructor.
+The constructor is a special method used to initialize instances of your class (just like Python's `__init__` method). Classes by default inherit a no-argument constructor from the default `Object` class. That means that even without epxlicitly defining a constructor, we can already initalize an `Account`:
 
-**Go ahead and implement the `Account`'s constructor. It should have input arguments `long amount, MoneySaver owner`**
+```Account a = new Account() // This works!```
+
+Often, you will want to initialize your object with some values. In this case you must define your own constructor.
+
+**Go ahead and implement the `Account` constructor. It should have input arguments `long amount, MoneySaver owner`**
 
 #### Fields
 
-You'll notice both classes also have fields. Fields are either attributes of members of a class (an `Account` **has an** `amount`) or things that belong to the class. Fields should almost exclusively be `private` unless you have a *really* good reason to make it `public`. If you want an outside class to be able to access a field, you must create public getter/setter methods.
+You'll notice both classes also have fields. Fields are either attributes of members of a class (an `amount` describes an `Account`) or things that belong to the class (an `Account` has an `owner`). **Fields should almost exclusively be `private` unless you have a *really* good reason to make it `public`.** If you want an outside class to be able to access a field, you must create public getter/setter methods.
 
 **Define and implement the `getAmount` and `setAmount` methods in `Account`. Make sure they have appropriate return types and input arguments.**
 
@@ -163,6 +167,8 @@ New amount: 30
 
 **Implement `largerAccount` in `Account`**
 
+Test your implementation!
+
 ```
 MoneySaver jim = new MoneySaver("Jim", 100);
 MoneySaver bob = new MoneySaver("Bob", 200);
@@ -181,7 +187,7 @@ Account owner: Bob, Account Balance: $30
 
 **Define a class `CheckingAccount` that `extends` from `Account`. CheckingAccount now has all of the methods that `Account` does. Give it a constructor with a similar signature to `Account`'s construtor.** If you need help implementing the constructor, check out [this](https://docs.oracle.com/javase/tutorial/java/IandI/super.html) website.
 
-**Give your `CheckingAccount` a `withdraw` method.**
+**Give your `CheckingAccount` a `withdraw` method.** This function should properly update the account balance.
 
 Finally, you are ready for your `MoneySaver` to be able to sign up for a checking account. **Implement `signUpForChecking`, ensuring you properly modify and initialize the `MoneySaver's` fields.**
 
@@ -195,7 +201,7 @@ CheckingAccount specific = new Account(100, new MoneySaver("Bill", -20)); // Inc
 
 This is because `CheckingAccount` is the specific subclass, and `Account` is the general `superclass`.
 
-**Give your `MoneySaver` a `withdraw` method. You will have to [cast](http://javarevisited.blogspot.com/2012/12/what-is-type-casting-in-java-class-interface-example.html) `myAccount` to a `CheckingAccount` in order to call its `withdraw` method. This is because `Account`s don't have `withdraw` methods, only `CheckingAccount`s do. You have to explicitly tell Java that the account is a `CheckingAccount` to call `withdraw`.**
+**Give your `MoneySaver` a `withdraw` method.** You will have to [cast](http://javarevisited.blogspot.com/2012/12/what-is-type-casting-in-java-class-interface-example.html) `myAccount` to a `CheckingAccount` in order to call its `withdraw` method. This is because `Account`s don't have `withdraw` methods, only `CheckingAccount`s do. You have to explicitly tell Java that the account is a `CheckingAccount` to call `withdraw`.
 
 Test your code from this section:
 
@@ -228,9 +234,16 @@ The last thing we will learn about inheritance is the `abstract` keyword. The `a
 
 ```
 public abstract class Vehicle {
+
+    int wheels;
 	
-	public Vehicle() {
+	public Vehicle(int wheels) {
+        this.wheels = wheels;
 	}
+
+    public int getWheels() {
+        return wheels;
+    }
 
 	public abstract void turnOn();
 }
@@ -238,7 +251,9 @@ public abstract class Vehicle {
 
 This says that all classes `extend`ing `Vehicle` must implement `turnOn`. Why doesn't Vehicle implement `turnOn`? Well, what a vehicle must do to turn on depends on what kind of vehicle it is! The implementation would be quite difficult for a `Car` as opposed to a `Boat`. (Boats turn on, right?)
 
-2. You can no longer initialize instances of the `abstract`class. Using the above example:
+Note that the `Car` and `Boat` classes would both have the inhereted method `getWheels()`, so you wouldn't have to implement it repetitively in each subclass.
+
+2. You can no longer initialize instances of the `abstract` class. Using the above example:
 
 ```
 public class Car extends Vehicle {
