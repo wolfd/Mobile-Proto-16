@@ -185,13 +185,13 @@ Account owner: Bob, Account Balance: $30
 
 ##### `extends`
 
-**Define a class `CheckingAccount` that `extends` from `Account`. CheckingAccount now has all of the methods that `Account` does. Give it a constructor with a similar signature to `Account`'s construtor.** If you need help implementing the constructor, check out [this](https://docs.oracle.com/javase/tutorial/java/IandI/super.html) website.
+**Define a class `CheckingAccount` that `extends` from `Account`.** CheckingAccount now has all of the methods that `Account` does. **Give it a constructor with a similar signature to `Account`'s construtor.** If you need help implementing the constructor, check out [this](https://docs.oracle.com/javase/tutorial/java/IandI/super.html) website.
 
 **Give your `CheckingAccount` a `withdraw` method.** This function should properly update the account balance.
 
 Finally, you are ready for your `MoneySaver` to be able to sign up for a checking account. **Implement `signUpForChecking`, ensuring you properly modify and initialize the `MoneySaver's` fields.**
 
-Realize that you can store a `CheckingAccount` instance in `myAccount` without changing its type from `Account`! This is an example of **polymorphism**. Because a `CheckingAccount` *is an* `Account`, you can store `CheckingAccount`s in `Account`s.
+Realize that you can store a `CheckingAccount` instance in `myAccount` without changing its type from `Account`! This is an example of *polymorphism*. Because a `CheckingAccount` *is an* `Account`, you can store `CheckingAccount`s in `Account`s.
 
 Note that you can't do it the other way around. Try putting this code in your project:
 
@@ -230,7 +230,7 @@ Account owner: Jim, Account Balance: $10
 
 The last thing we will learn about inheritance is the `abstract` keyword. The `abstract` keyword goes in the class declaration (`public abstact class...`). This keyword does two things:
 
-1. You can now declare `abstract` methods. These methods have no body, but classes that extend them must define these methods. For example, let's say you had an abstract `Vehicle` class:
+* You can now declare `abstract` methods. These methods have no body, but classes that extend them must define these methods. For example, let's say you had an abstract `Vehicle` class:
 
 ```
 public abstract class Vehicle {
@@ -253,7 +253,7 @@ This says that all classes `extend`ing `Vehicle` must implement `turnOn`. Why do
 
 Note that the `Car` and `Boat` classes would both have the inhereted method `getWheels()`, so you wouldn't have to implement it repetitively in each subclass.
 
-2. You can no longer initialize instances of the `abstract` class. Using the above example:
+* You can no longer initialize instances of the `abstract` class. Using the above example:
 
 ```
 public class Car extends Vehicle {
