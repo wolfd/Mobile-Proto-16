@@ -50,23 +50,6 @@ Don't worry too much yet about what all the words in `public static void main(St
 Create two new classes, and copy paste the following boilerplates into them:
 
 ```
-public class Account {
-
-    private MoneySaver owner;
-    private long amount;
-
-    public String toString() {
-        return "Account owner: " + owner.getName() + ", Account Balance: $" + amount;
-    }
-
-    public static Account largerAccount(Account acc1, Account acc2) {
-    }
-
-}
-
-```
-
-```
 public class MoneySaver {
 
     private long myMoney;
@@ -79,19 +62,16 @@ public class MoneySaver {
         myMoney = money;
     }
 
-    public String toString() {
-        return name + ", " + "My balance is: "+ myMoney;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void signUpForChecking(int amount) {
-    }
-
     public Account getMyAccount() {
         return myAccount;
+    }
+
+    public String toString() {
+        return name + ", " + "My balance is: "+ myMoney;
     }
 
     public void deposit(int amount) {
@@ -99,9 +79,29 @@ public class MoneySaver {
 
     public void withdraw(int amount) {
     }
+    
+    public void signUpForChecking(int amount) {
+    }
 
     public static void main(String[] args) {
     }
+}
+
+```
+
+```
+public class Account {
+
+    private MoneySaver owner;
+    private long amount;
+
+    public String toString() {
+        return "Account owner: " + owner.getName() + ", Account Balance: $" + amount;
+    }
+
+    public static Account largerAccount(Account acc1, Account acc2) {
+    }
+
 }
 
 ```
