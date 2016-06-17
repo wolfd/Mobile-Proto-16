@@ -86,8 +86,8 @@ captures/
 4. [Git Branching](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
 ### Try It Out!
-    This git tutorial is super cool because it not only let's you enter the commands but also visually see what happens in a certain repo. Try to do atleast 8 levels.
-    [Github tutorial](http://learngitbranching.js.org/)
+This git tutorial is super cool because it not only let's you enter the commands but also visually see what happens in a certain repo. Try to do atleast 8 levels.
+[Github tutorial](http://learngitbranching.js.org/)
 
 ## Java
 
