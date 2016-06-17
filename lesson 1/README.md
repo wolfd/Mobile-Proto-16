@@ -9,7 +9,8 @@ Working and well-tested code that has been reviewed by peers.
 
 #### 2. Non-master branches?
 1. Each of these branch should mostly have one (maybe two if you are pair-programming a feature) person working on it. 
-2. Each branch should add a significant working change to the master. Usually each branch adds a working feature to the master
+2. Each branch should add a significant working change to the master. Usually each branch adds a working feature to the master. Occassionally you will have a small bug that can be fixed in a few lines of code.
+3. Simply branch off master, make the change, and open a pull request to merge your fix.
 
 #### 3. Issues:
 1. Labels:
@@ -75,7 +76,7 @@ captures/
 
 ### Best Practices:
 1.  Commits: Each commit should add a working part of the feature to the branch. 
-2.  COMMIT OFTEN and write proper commit messages. The idea behind commit messages is that if a stranger/instructor reads through all the commits and commit messages, they should be able to understand how the project progressed. Example of a commit message: “ADD: Sign-in form skeleton”, “EDIT: Subscribe button color/shape”
+2.  *Commit often* and write proper commit messages. The idea behind commit messages is that if a stranger/instructor reads through all the commits and commit messages, they should be able to understand how the project progressed. Example of a commit message: `“ADD: Sign-in form skeleton”`, `“EDIT: Subscribe button color/shape”`
 3.  Pull Requests: After you are satisfied with the work done in your branch, you might want merge it into master. To do this, pull requests are used. Once you have created a pull request, your peers should review the changes you made and ask questions about parts they don’t understand. A pull-request should only be merged after n number of peers have reviewed the code and given it a :+1:. Your team can decide how exactly you want that to happen.
 4.  (Highly recommended) Issues to track bugs/assign tasks to team members as well as to write down future goals
 
@@ -86,7 +87,7 @@ captures/
 4. [Git Branching](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
 ### Try It Out!
-This git tutorial is super cool because it not only let's you enter the commands but also visually see what happens in a certain repo. Try to do atleast 8 levels.
+This git tutorial is super cool because it not only let's you enter the commands but also visually see what happens in a certain repo. **Do at least 8 levels.**
 [Github tutorial](http://learngitbranching.js.org/)
 
 ## Java
