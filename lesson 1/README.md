@@ -357,11 +357,12 @@ c.turnOn();
 ```
 
 **Make your `Account` class `abstract`. Confirm that you can't initalize it anymore.**
-```
+
 
 # The `Fraction` class
 
 Create a new class called `Fraction`.
+
 ```
 public class Fraction {
 
