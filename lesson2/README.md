@@ -79,7 +79,7 @@ See the file called `build.gradle(Module: app)`? That's your gradle file. Gradle
 
 5. Assign that button as a variable
 
-..* Note that the XML file does not make the button - it only describes the design of the button. You declare the button in the fragment/activity, then assign the XML id to your button to describe the look of the button. XML is necessary if you want your button to actually appear on screen. This is true of all other elements as well, not just buttons (what about grid layouts and such?)
+  * Note that the XML file does not make the button - it only describes the design of the button. You declare the button in the fragment/activity, then assign the XML id to your button to describe the look of the button. XML is necessary if you want your button to actually appear on screen. This is true of all other elements as well, not just buttons (what about grid layouts and such?)
 
 6. Make an onclicklistener
 
