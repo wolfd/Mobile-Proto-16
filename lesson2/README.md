@@ -62,10 +62,10 @@ These files hold information for various colors and strings in your code, as the
 
 *Note*: In your java code, if you do type a string in, a little pop up will show up and you can press some shortcut to put it in your strings.xml
 
-### 4. Manifest
+### 4. [Manifest](https://developer.android.com/guide/topics/manifest/manifest-intro.html)
 It defines settings about your app and what permissions it needs
 
-### 5. Gradle
+### 5. [Gradle](https://developer.android.com/studio/build/index.html)
 See the file called `build.gradle(Module: app)`? That's your gradle file. Gradle is the thing that builds your app, like a compiler. Your app will break if there’s something wrong with this. Also, remember to recompile whenever you change it (it might take a while).
 
 ### 6. Let's get to work!
