@@ -11,7 +11,8 @@ This is the recommended OS for this course. If you don't already have Ubuntu on 
 If you do this before class we'll have a lot more time to help you out and get started! Please download [Android Studio 2.1](https://developer.android.com/studio/install.html).
 
 *Note*: For those of you who already have Android Studio, it's important that you have the latest version. This makes it easier for us to help you with any problems you might have.
-*Note 2*: If you choose to use Android Studio on Windows, then you'll need to download github desktop [link here].
+
+*Note 2*: If you choose to use Android Studio on Windows or OSX and don't know how to get git integration with your terminal, then you'll can download [Github Desktop](https://desktop.github.com/) instead.
 
 ## 2. Set up github
 
@@ -23,8 +24,8 @@ git clone git@github.com:YOUR_ACCOUNT_NAME/Mobile-Proto-16.git  # this should be
 git remote add upstream git@github.com:MobileProto16/Mobile-Proto-16.git
 ```
 
-As an aside, Android studio has git-integration. Be on the lookout for this. It's pretty cool.
+As an aside, Android studio has git integration. Be on the lookout for this. It's pretty cool.
 
-## 3. Join our slack channel
+## 3. Join our slack channel [#mobileproto](https://olin.slack.com/messages/mobileproto/)
 
 If you need any help, posting in slack will enable the promptest response and allow you to see any solutions to similar problems other people have had. Do it!
