@@ -53,8 +53,8 @@ Also, fragments and activities communicate with their XML files through lookupby
 [fragment]: https://cdn2.raywenderlich.com/wp-content/uploads/2015/10/android_fragments_d001_why_fragments.png "fragments are very cool, I promise"
 [activityfrag]: https://camo.githubusercontent.com/b768afff0888fcb8cbe1704b0609b53110276969/687474703a2f2f646576656c6f7065722e616e64726f69642e636f6d2f696d616765732f66756e64616d656e74616c732f667261676d656e74732e706e67 "see how useful fragments are?"
 
-### 3. XML files
-Think of it like the CSS/HTML of Android if you don’t know what XML is. XML files define where everything goes in your activities/fragments (each activity and fragment will have its own .xml). These are pretty self explanatory, so we won't go very in-depth.
+### 3. [XML](https://developer.android.com/guide/topics/ui/declaring-layout.html) files
+Think of it like the CSS/HTML of Android if you don’t know what XML is. XML files define the layouts of your activities/fragments (each activity and fragment will have its own .xml). These are pretty self explanatory, so we won't go very in-depth.
 The “Design” tab is useful for looking at possible elements you can add. Not so useful for accurate placement of elements, but go ahead and drag and drop them if you don’t want to type them in.
 
 #### colors.xml and strings.xml
@@ -91,7 +91,7 @@ See the file called `build.gradle(Module: app)`? That's your gradle file. Gradle
 * Android best practices
 
 ### Extra Resources
-
+[Android Developer guide](https://developer.android.com/develop/index.html) <-- you should 100% be using this
 
 ### Assignment
 
