@@ -27,7 +27,11 @@ When you interact with an app on your phone, there are different "screens" that 
 
 #### [Activities](https://developer.android.com/guide/components/activities.html) (ex. MainActivity.java)
 
-Activities contain one or many fragments inside of them.  It handles the passing of information between fragments.  Most simple apps (like the ones you'll be making in the beginning of this class) will only need one activity.
+ An activity provides a screen that users can interact with in order to do something, such as dial the phone, take a photo, send an email, or view a map. Each activity is given a window in which to draw its UI. The window typically fills the screen, but may be smaller than the screen and float on top of other windows.
+ 
+ Each activity can then start another activity in order to perform different actions. You generally have the main activity which launches other activities (or, your application could just be a single activity). Each time a new activity starts, the previous activity is stopped, but the system preserves the activity in a stack (the "back stack"). When a new activity starts, it is pushed onto the back stack and takes user focus.
+ 
+ Note that an activity can hold multiple "fragments," which is very useful. The activity handles passing information between fragments and lets you switch between different fragments.
 
 #### [Fragments](https://developer.android.com/guide/components/fragments.html) (ex. MainActivityFragment.java)
 Fragments are basically what we described as "screens" in our Snapchat example. Each fragment does a separate task and shows different components to the user. If you were making Snapchat, you might have a fragment for each swipeable screen. Fragments are useful for:
@@ -35,6 +39,16 @@ Fragments are basically what we described as "screens" in our Snapchat example. 
 2. Reusability - placing behavior or UI parts into fragments that can be shared across multiple activities.
 3. Adaptability - representing sections of a UI as different fragments and utilizing different layouts depending on screen orientation and size.
 
+![alt text][fragment]
+
+However, with the Snapchat example, you could also have each swipeable screen be another activity. Now, this sounds confusing. Why have single fragments that you switch through in one activity instead of just having multiple activities? Well, the biggest reason is for when you're designing an app to be used on both phones and tablets.
+ 
+![alt text][activityfrag]
+
+Alongside activities and fragments are other java files you can write, like classes, tests, or interfaces.
+
+[fragment]: https://cdn2.raywenderlich.com/wp-content/uploads/2015/10/android_fragments_d001_why_fragments.png "fragments are very cool, I promise"
+[activityfrag]: https://camo.githubusercontent.com/b768afff0888fcb8cbe1704b0609b53110276969/687474703a2f2f646576656c6f7065722e616e64726f69642e636f6d2f696d616765732f66756e64616d656e74616c732f667261676d656e74732e706e67 "see how useful fragments are?"
 ### 2. [Layout XML](https://developer.android.com/guide/topics/ui/declaring-layout.html) files (ex. fragment_main.xml)
 XML files are basically the CSS/HTML of the Android world. They define where each component goes in your activities and fragments. Each activity and fragment will have its own XML file that it can communicate with.
 
