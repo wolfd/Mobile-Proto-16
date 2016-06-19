@@ -265,7 +265,6 @@ c.turnOn();
 ```
 
 **Make your `Account` class `abstract`. Confirm that you can't initalize it anymore.**
-```
 
 # The `Fraction` class
 
