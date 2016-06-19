@@ -112,7 +112,7 @@ The constructor is a special method used to initialize instances of your class (
 
 ```Account a = new Account() // This works!```
 
-Often, you will want to initialize your object with some values. In this case you must define your own constructor.
+Often, you will want to initialize your object with some values. In this case you must define your own constructor. You can even define multiple constructors, each with different arguments.
 
 **Go ahead and implement the `Account` constructor. It should have input arguments `long amount, MoneySaver owner`**
 
@@ -163,7 +163,7 @@ New amount: 30
 
 ##### What does `static` mean?
 
-`static` methods operate on the *Class*, as opposed to *instances* of the class. You can call static methods without creating any object e.g. `Collections.sort()`. Make a method `static` if the method is something the *Class* can do.
+`static` methods operate on the *Class*, as opposed to *instances* of the class. `static` variables are properties of the entire class as opposed to instances of that class. You can call static methods without creating any objects e.g. `Collections.sort()`. Make a method `static` if the method is something the *Class* can do, and doesn't need any instance variables to work properly (`static` methods *can* require `static` variables, though).
 
 **Implement `largerAccount` in `Account`**
 
