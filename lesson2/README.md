@@ -9,6 +9,8 @@ To begin with, we'll create a default app and walk you through the different com
 2. Name it something akin to "Lesson2HW" and save it in your forked repo
 3. Click "Basic Activity"
 4. Check "Use a Fragment"
+5. Click done
+6. Click the little green play arrow and run your app
 
 Great, you just created your very first app!
 
