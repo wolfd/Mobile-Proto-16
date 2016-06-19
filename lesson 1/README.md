@@ -9,13 +9,12 @@ Working and well-tested code that has been reviewed by peers.
 
 #### 2. Non-master branches?
 1. Each of these branch should mostly have one (maybe two if you are pair-programming a feature) person working on it. 
-2. Each branch should add a significant working change to the master. Usually each branch adds a working feature to the master. Occassionally you will have a small bug that can be fixed in a few lines of code.
-3. Simply branch off master, make the change, and open a pull request to merge your fix.
+2. Each branch should add a significant working change to the master. Usually each branch adds a working feature to the master. Occassionally you will have a small bug that can be fixed in a few lines of code. Simply branch off master, make the change, and open a pull request to merge your fix.
 
 #### 3. Issues:
 1. Labels:
 ![labels](images/labels.png)
-Every time you notice a bug, add it to the issues with the label “bug”. Whenever you/team decide to add a new features, enhancements can be used. Maybe there is a bug in the library you use which is out of your capability to fix…”wontfix”. You can also assign people to issues so that teammates don’t step into each other’s work. You also get an idea about what a teammate is working on. Seriously, you can use these labels anyway to your and your team’s productivity.
+Every time you notice a bug, add it to the issues with the label “bug”. Whenever you/team decide to add a new features, enhancements can be used. You can use labels to prioritize certain fixed. You can also assign people to issues so that teammates don’t step into each other’s work. You can see what your teammates are working on.
 
 2. Milestones:
 ![milestones](images/milestones.png)
@@ -23,11 +22,11 @@ Use this to properly scope your project and to make sure that your team is on tr
 
 #### 4. Pull Requests:
 1. An extra checkpoint in merging a branch to master (or other branches)
-2. Peers can look at the changes a merge will add and get a chance to review/comment on/ask question about the code
-3. Peers can also checkout the branch to test it out
+2. Peers can look at the changes a merge will add and get a chance to review/comment on/ask questions about the code
+3. Peers can (and should) checkout the branch to test it out before merging.
 
 #### 5. Merge Conflicts:
-Working in a relatively large project with multiple other people will result in merge conflicts. It happens when the same line of code gets changed both in master and in your branch since the last time you pulled from master. Merge conflicts might look something like this:
+Working in a relatively large project with multiple other people will result in merge conflicts. It happens when the same line of code has been changed on master in your branch. Merge conflicts might look something like this:
 ```
 <<<<<<< HEAD
 public static int methodName(int a, int b) {
