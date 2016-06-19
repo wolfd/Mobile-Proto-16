@@ -48,56 +48,38 @@ Gradle is the thing that builds your app, like a compiler. Each time you launch 
 #### strings.xml
 Android coding conventions dictate that every user-facing string should be stored in this file instead of hardcoded.  This is so every string in your app can be easily translated in one file.
 
-# Android Studio Overview
+## Android Studio Overview
 Android Studio is an IDE, not a text editor. This means that Android Studio is very smart and you can use it to navigate and write code quickly.  Here's an overview of some of our favorite features:
 
 - **Auto-saving:** No need to ever press the save button, AS saves as soon as you type.
 - **Auto-compiling**: AS does some compiling in real-time, which means you'll know immediately if you've misspelled a variable or didn't pass the right parameters to a function.
 - **Smart Autocomplete:** AS will only make autocomplete suggestions that are legal and make sense in the context of the code.
+- **Documentation:** Pressing CTRL+Q will give you info for a class or method that you’ve highlighted, if you see something and don’t know what it is.
 
-## Layout of Android Studio
+### Layout of Android Studio
 If you don't see the project view pane on the left, press `Alt+1` to make it appear.  Here you can see the directory structure of the different files in your app.  The java files are in `app > java > [DOMAIN]` and the xml layout files are in `app > res > layout`.  Double-clicking on files opens them, and you can have multiple tabs of files open.
 
-When you have a layout xml file open, AS gives you two different ways to edit the layout.  At the bottom you should see a "Design" tab and a "Text" tab.  The Design tab gives you a drag-and-drop GUI to easily add components onto the screen. The pane on the left shows you all the possible components that you can add, and you can drag them onto the screen to place them where you want.  If you want more manual fine-tuning you can click on the Text tab, where you can edit the raw xml that produces the layout.
+When you have a layout .xml file open, AS gives you two different ways to edit the layout.  At the bottom you should see a "Design" tab and a "Text" tab.  The Design tab gives you a drag-and-drop GUI to easily add components onto the screen. The pane on the left shows you all the possible components that you can add, and you can drag them onto the screen to place them where you want.  If you want more manual fine-tuning you can click on the Text tab, where you can edit the raw xml that produces the layout.
 
 When you want to run your app, press the green play icon in the top toolbar.  A window will appear, where you can select to run an emulator or use a physical phone.  If you plugged in your android phone and enabled usb debugging mode, you should see your phone pop up in this list.  Select it, press OK, and your app should appear on your phone after it installs.
 
-# Let's get to work!
+## Let's get to work!
 
 1. Go to your XML for this fragment
 2. Drag a button onto the view or type it in and suggest-complete
 3. Give it an id
 4. Go to the fragment java file
 5. Assign that button as a variable
-
-Also, fragments and activities communicate with their XML files through lookupbyid().
-
-  * Note that the XML file does not make the button - it only describes the design of the button. You declare the button in the fragment/activity, then assign the XML id to your button to describe the look of the button. XML is necessary if you want your button to actually appear on screen. This is true of all other elements as well, not just buttons (what about grid layouts and such?)
-
+  * Note that the XML file does not make the button - it only describes the design of the button. You declare the button in the fragment/activity by using lookupbyid(), then assign the XML id to your button to describe the look of the button. XML is necessary if you want your button to actually appear on screen. This is true many other elements as well, not just buttons
 6. Make an onclicklistener
-
 7. Have the button log something in android studio
 
-## Tips and tricks
-* Pressing CTRL+Q will give you info for a class or method that you’ve highlighted, if you see something and don’t know what it is
-
-* Android best practices
-
 ## Extra Resources
-[Android Developer guide](https://developer.android.com/develop/index.html) <-- you should 100% be using this
+* [Android Developer guide](https://developer.android.com/develop/index.html) <-- you should 100% be using this
 
 ## Assignment
+#### Part 1: Understanding high level design
+Draw on the whiteboards how you’d use fragments and activities to make Venmo, Snapchat, Yikyak, or some other popular app that one of us have used before. Get this checked off by a member of the teaching team or a NINJA.
 
-Part 1: Understanding high level design
-
-Draw on the whiteboards how you’d use fragments and activities to make Venmo, Snapchat, Yikyak, or some other popular app that one of us have used before. Get it checked off by one of us
-
-Part 2: Building on top of the app we showed you
-
-Have a textview display things
-
-Get an edittext to work
-
-Play around with different layouts types?
-
-Have text input and button. When you click button, text input gets cleared/textview somewhere else changes to have textinput text
+#### Part 2: Building on top of the app we showed you
+Your goal is to start making a to-do list. There are many ways to go about doing this, either with just a text input or a pop-up asking for input. Whichever method you choose is fine as long as your app is a working to-do list. Layout elements you'll probably want to include are buttons, a grid layout, a textview, and an edittext. There are *tons* of tutorials online how to do this, and the MobileProto team will be here to help you along the way.
