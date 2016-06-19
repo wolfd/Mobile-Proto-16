@@ -26,17 +26,54 @@ Use this to properly scope your project and to make sure that your team is on tr
 3. Peers can (and should) checkout the branch to test it out before merging.
 
 #### 5. Merge Conflicts:
-Working in a relatively large project with multiple other people will result in merge conflicts. It happens when the same line of code has been changed on master in your branch. Merge conflicts might look something like this:
+Working in a relatively large project with multiple other people will result in merge conflicts. It happens when the same line of code has been changed on master in your branch. Here's an example of a pull request with merge conflicts:
+
+![conflict](images/conflict.png)
+
+Let's resolve the merge conflict my using `rebase`!
+
+```
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+$ git pull origin master
+From github.com:davidabrahams/potential-lamp
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+$ git checkout myBranch
+Switched to branch 'myBranch'
+$ git merge master
+Auto-merging file.java
+CONFLICT (content): Merge conflict in file.java
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+Merge conflicts might look something like this:
+
 ```
 <<<<<<< HEAD
-public static int methodName(int a, int b) {
+public static int otherMethodName(int a, int b) {
 =======
-public static int otherName(int a, int b) {
->>>>>>> featureBranch
-  // body
+public static int newMethodName(int a, int b) {
+>>>>>>> master
+    // Body
 }
 ```
-What does it all mean? The code between <<<<<<< HEAD and ======= is the code that lives in master. And the code between ======= and >>>>>>> featureBranch is the code that lives in your branch. In order to solve this, look at what version is outdated. Remove that code section along with the <<<<, ====, and >>>> lines. Now, `git add` the files with merge conflicts. After that, you should have no problem after that to merge your branch to master.
+What does it all mean? The code between <<<<<<< HEAD and ======= is the code that you have written to your branch. And the code between ======= and >>>>>>> master is the code that lives on master. It is up to you to determine which version is correct, and occassionally you will have to use code from both branches in order to create a working version. You want to presserve the feature changed you made, while also not removing features from master. Now, `git add` the files with merge conflicts. You should now be able to merge your branch to master. Once we've picked the correct version:
+
+```
+$ git add -A
+$ git commit
+[myBranch fd76144] Merge branch 'master' into myBranch
+$ git push origin myBranch
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 233 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To git@github.com:davidabrahams/potential-lamp.git
+   943f3d5..fd76144  myBranch -> myBranch
+```
+
+The pull-request should now be mergeable on github.
 
 #### 6. .gitignore
 When you start collaborating on Android projects, you will start noticing how certain files from your Android project mess things up in other people's computers. There are some files that you never want to push to the repo. It can be hard to manually add certain files while keeping out others. .gitignore helps us here by never tracking any changes in that file. Usually, .gitignore contains certain extensions but it can also contain folders and specific filenames.
