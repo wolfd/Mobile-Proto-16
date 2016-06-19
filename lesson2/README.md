@@ -35,9 +35,10 @@ When you interact with an app on your phone, there are different "screens" that 
 
 #### [Fragments](https://developer.android.com/guide/components/fragments.html) (ex. MainActivityFragment.java)
 Fragments are basically what we described as "screens" in our Snapchat example. Each fragment does a separate task and shows different components to the user. If you were making Snapchat, you might have a fragment for each swipeable screen. Fragments are useful for:
-1. Modularity - dividing complex activity code across fragments for better organization and maintenance.
-2. Reusability - placing behavior or UI parts into fragments that can be shared across multiple activities.
-3. Adaptability - representing sections of a UI as different fragments and utilizing different layouts depending on screen orientation and size.
+
+1. Modularity: dividing complex activity code across fragments for better organization and maintenance.
+2. Reusability: placing behavior or UI parts into fragments that can be shared across multiple activities.
+3. Adaptability: representing sections of a UI as different fragments and utilizing different layouts depending on screen orientation and size.
 
 ![alt text][fragment]
 
@@ -52,15 +53,15 @@ Alongside activities and fragments are other java files you can write, like clas
 ### 2. [Layout XML](https://developer.android.com/guide/topics/ui/declaring-layout.html) files (ex. fragment_main.xml)
 XML files are basically the CSS/HTML of the Android world. They define where each component goes in your activities and fragments. Each activity and fragment will have its own XML file that it can communicate with.
 
+#### strings.xml and colors.xml
+Android coding conventions dictate that every user-facing string should be stored in strings.xml instead of hardcoded.  This is so every string in your app can be easily translated in one file, and makes changing strings that repeat a lot easier. Similarly, you have colors.xml which defines the colors you use in your other XML files.
+
 ### 3. Configuration Files
 #### [Manifest](https://developer.android.com/guide/topics/manifest/manifest-intro.html) (AndroidManifest.xml)
 The Manifest file defines settings about your app and what permissions it needs.  Whenever you download an app from the Play Store, it will show you what permissions the app needs (like internet, data storage, GPS location) so that users can be knowledgable about what their apps are using. These permissions are taken from the app's manifest file.
 
 #### [Gradle file](https://developer.android.com/studio/build/index.html) (build.grade (Module: app))
 Gradle is the thing that builds your app, like a compiler. Each time you launch your app to your phone to test it, gradle will run and compile your code.
-
-#### strings.xml
-Android coding conventions dictate that every user-facing string should be stored in this file instead of hardcoded.  This is so every string in your app can be easily translated in one file.
 
 ## Android Studio Overview
 Android Studio is an IDE, not a text editor. This means that Android Studio is very smart and you can use it to navigate and write code quickly.  Here's an overview of some of our favorite features:
