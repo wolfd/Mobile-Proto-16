@@ -36,7 +36,7 @@ When you interact with an app on your phone, there are different "screens" that 
  Note that an activity can hold multiple "fragments," which is very useful. The activity handles passing information between fragments and lets you switch between different fragments.
 
 #### [Fragments](https://developer.android.com/guide/components/fragments.html) (ex. MainActivityFragment.java)
-Fragments are basically what we described as "screens" in our Snapchat example. Each fragment does a separate task and shows different components to the user. If you were making Snapchat, you might have a fragment for each swipeable screen. Fragments are useful for:
+Fragments are basically what we described as "screens" in our Snapchat example. Each fragment does a separate task and shows different components to the user. If you were making Snapchat, you might have a fragment for each swipeable screen. You could even [nest fragments within fragments](https://developer.android.com/about/versions/android-4.2.html#NestedFragments) if you'd like! Fragments are useful for:
 
 1. Modularity: dividing complex activity code across fragments for better organization and maintenance.
 2. Reusability: placing behavior or UI parts into fragments that can be shared across multiple activities.
