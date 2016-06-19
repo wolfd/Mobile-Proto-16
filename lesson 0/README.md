@@ -18,8 +18,6 @@ git clone git@github.com:YOUR_ACCOUNT_NAME/Mobile-Proto-16.git  # this should be
 git remote add upstream git@github.com:MobileProto16/Mobile-Proto-16.git
 ```
 
-As an aside, Android studio has git integration. Be on the lookout for this. It's pretty cool.
-
 If you are using Windows as your OS, make sure you have your git shell set up and working *before* class starts. You can download git shell for Windows (here)[https://git-for-windows.github.io/]. If you're using OSX version Maverick or later, git will already be present. Otherwise, start [downloading git here](https://git-scm.com/download/mac).
 
 ## 3. Join our slack channel [#mobileproto](https://olin.slack.com/messages/mobileproto/)
