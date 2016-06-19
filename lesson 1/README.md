@@ -1,4 +1,4 @@
-# Lesson 0 - Github and an Intro to Java
+# Lesson 1 - Github and an Intro to Java
 
 ##  Github
 
