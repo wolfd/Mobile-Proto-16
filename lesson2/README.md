@@ -2,7 +2,7 @@
 ### Your first Android application!
 Today in class we'll walk you through making your first Android application. Found in the lesson2 folder is a copy of the application that we will create in class.
 
-### 1. Make your app
+## Create a Blank App
 To begin with, we'll create a default app and walk you through the different components.
 
 1. Create a new project in Android Studio
@@ -12,11 +12,10 @@ To begin with, we'll create a default app and walk you through the different com
 
 Great, now you have an Android app! Now, what does this all mean?
 
-### 2. [Activities](https://developer.android.com/guide/components/activities.html) and [Fragments](https://developer.android.com/guide/components/fragments.html)
+## Explore Around!
+Android Studio created a bunch of files and boilerplate code to get you started, so let's explore the different files that make up every app:
 
-#### Activities
-------
-
+### 1. [Activities](https://developer.android.com/guide/components/activities.html)
 An activity is an application component that provides a screen that users can interact with in order to do something, such as dial the phone, take a photo, send an email, or view a map. Each activity is given a window in which to draw its user interface. The window typically fills the screen, but may be smaller than the screen and float on top of other windows.
 
 Each activity can then start another activity in order to perform different actions. You generally have the main activity which launches other activities (or, your application *could* just be a single activity). Each time a new activity starts, the previous activity is stopped, but the system preserves the activity in a stack (the "back stack"). When a new activity starts, it is pushed onto the back stack and takes user focus.
@@ -24,17 +23,12 @@ Each activity can then start another activity in order to perform different acti
 Note that an activity can hold multiple "fragments," which is very useful. You can also switch between fragments in an activity
 It handles passing information between fragments
 
-#### Fragments
-------
-
+### 2. [Fragments](https://developer.android.com/guide/components/fragments.html)
 Fragments are what go hand in hand with activities. They were introduced in Android 3.0 (API level 11), primarily to support more dynamic and flexible UI designs on large screens, such as tablets, but are still useful for smaller screens as well. Think of them as sub activities for when you want to make activities more modular.
 
 You can have multiple fragments, where usually each fragment does a separate task. For example, if you were making Snapchat, you might have a fragment for each swipeable screen. Fragments are useful for:
-
 1. Modularity - dividing complex activity code across fragments for better organization and maintenance.
-
 2. Reusability - placing behavior or UI parts into fragments that can be shared across multiple activities.
-
 3. Adaptability - representing sections of a UI as different fragments and utilizing different layouts depending on screen orientation and size.
 
 ![alt text][fragment]
@@ -63,7 +57,8 @@ It defines settings about your app and what permissions it needs
 ### 5. [Gradle](https://developer.android.com/studio/build/index.html)
 See the file called `build.gradle(Module: app)`? That's your gradle file. Gradle is the thing that builds your app, like a compiler. Your app will break if there’s something wrong with this. Also, remember to recompile whenever you change it (it might take a while).
 
-### 6. Let's get to work!
+## Let's get to work!
+
 1. Go to your XML for this fragment
 
 2. Drag a button onto the view or type it in and suggest-complete
@@ -80,15 +75,15 @@ See the file called `build.gradle(Module: app)`? That's your gradle file. Gradle
 
 7. Have the button log something in android studio
 
-### 7. Tips and tricks
+## Tips and tricks
 * Pressing CTRL+Q will give you info for a class or method that you’ve highlighted, if you see something and don’t know what it is
 
 * Android best practices
 
-### Extra Resources
+## Extra Resources
 [Android Developer guide](https://developer.android.com/develop/index.html) <-- you should 100% be using this
 
-### Assignment
+## Assignment
 
 Part 1: Understanding high level design
 
