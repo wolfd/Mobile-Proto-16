@@ -5,15 +5,10 @@ Today in class we'll walk you through making your first Android application. Fou
 ### 1. Make your app
 To begin with, we'll create a default app and walk you through the different components.
 
-1. First, open Android Stuido
-
-2. Create a new project
-
-3. Name it something akin to "Lesson2HW" in the location of your forked repo
-
-4. Click "blank activity"
-
-5. Check "use a fragment"
+1. Create a new project in Android Studio
+2. Name it something akin to "Lesson2HW" and save it in your forked repo
+3. Click "Blank Activity"
+4. Check "Use a Fragment"
 
 Great, now you have an Android app! Now, what does this all mean?
 
