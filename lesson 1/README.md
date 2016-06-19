@@ -26,7 +26,20 @@ Use this to properly scope your project and to make sure that your team is on tr
 2. Peers can look at the changes a merge will add and get a chance to review/comment on/ask question about the code
 3. Peers can also checkout the branch to test it out
 
-#### 5. .gitignore
+#### 5. Merge Conflicts:
+Working in a relatively large project with multiple other people will result in merge conflicts. It happens when the same line of code gets changed both in master and in your branch since the last time you pulled from master. Merge conflicts might look something like this:
+```
+<<<<<<< HEAD
+public static int methodName(int a, int b) {
+=======
+public static int otherName(int a, int b) {
+>>>>>>> featureBranch
+  // body
+}
+```
+What does it all mean? The code between <<<<<<< HEAD and ======= is the code that lives in master. And the code between ======= and >>>>>>> featureBranch is the code that lives in your branch. In order to solve this, look at what version is outdated. Remove that code section along with the <<<<, ====, and >>>> lines. Now, `git add` the files with merge conflicts. After that, you should have no problem after that to merge your branch to master.
+
+#### 6. .gitignore
 When you start collaborating on Android projects, you will start noticing how certain files from your Android project mess things up in other people's computers. There are some files that you never want to push to the repo. It can be hard to manually add certain files while keeping out others. .gitignore helps us here by never tracking any changes in that file. Usually, .gitignore contains certain extensions but it can also contain folders and specific filenames.
 
 Here is a .gitignore you can use for your Android projects:
