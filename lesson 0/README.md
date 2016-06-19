@@ -2,17 +2,11 @@
 
 Welcome to MobileProto! We're excited to be with you this semester, and in order to have a smoother process there are a few things that we'd like you to do before coming in to class on September 1st.
 
-## Install Ubuntu 14.04
-
-This is the recommended OS for this course. If you don't already have Ubuntu on your computer either via dual-boot or a VM, we strongly recommend you to install it. You can use Windows or OSX, but if you have OS-specific issues it will be more difficult for the teaching team to help you.
-
 ## 1. Download and Install Android Studio
 
 If you do this before class we'll have a lot more time to help you out and get started! Please download [Android Studio 2.1](https://developer.android.com/studio/install.html).
 
 *Note*: For those of you who already have Android Studio, it's important that you have the latest version. This makes it easier for us to help you with any problems you might have.
-
-*Note 2*: If you choose to use Android Studio on Windows or OSX and don't know how to get git integration with your terminal, then you'll can download [Github Desktop](https://desktop.github.com/) instead.
 
 ## 2. Set up github
 
@@ -25,6 +19,8 @@ git remote add upstream git@github.com:MobileProto16/Mobile-Proto-16.git
 ```
 
 As an aside, Android studio has git integration. Be on the lookout for this. It's pretty cool.
+
+If you are using Windows as your OS, make sure you have your git shell set up and working *before* class starts. You can download git shell for Windows (here)[https://git-for-windows.github.io/].
 
 ## 3. Join our slack channel [#mobileproto](https://olin.slack.com/messages/mobileproto/)
 
