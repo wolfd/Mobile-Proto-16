@@ -3,6 +3,6 @@
 
 Welcome to Olin Mobile Proto, where we teach how to make Android apps.
 
-Our slack channel is X
+Our slack channel is #mobileproto
 Our website is X
 Do X
