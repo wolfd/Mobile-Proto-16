@@ -32,7 +32,7 @@ Working in a relatively large project with multiple other people will result in 
 
 Let's resolve the merge conflict my using `rebase`!
 
-```
+```shell
 $ git checkout master
 Switched to branch 'master'
 Your branch is up-to-date with 'origin/master'.
@@ -174,7 +174,7 @@ public class HelloWorld {
 
 A window button should appear next to the main method header. Click it to run your program!
 
-```
+```java
 Hello World!
 ```
 
@@ -226,7 +226,7 @@ public class MoneySaver {
 
 ```
 
-```
+```java
 public class Account {
 
     private MoneySaver owner;
@@ -247,7 +247,8 @@ public class Account {
 
 The constructor is a special method used to initialize instances of your class (just like Python's `__init__` method). Classes by default inherit a no-argument constructor from the default `Object` class. That means that even without epxlicitly defining a constructor, we can already initalize an `Account`:
 
-```Account a = new Account() // This works!```
+```java
+Account a = new Account() // This works!```
 
 Often, you will want to initialize your object with some values. In this case you must define your own constructor.
 
@@ -261,7 +262,7 @@ You'll notice both classes also have fields. Fields are either attributes of mem
 
 Add the following to your main method (`public static void main(String[] args)`) to test your code so far:
 
-```
+```java
 MoneySaver jim = new MoneySaver("Jim", 100);
 Account a = new Account(100, jim);
 System.out.println(a);
@@ -271,7 +272,7 @@ System.out.println("New amount: " + a.getAmount());
 
 Expected output:
 
-```
+```java
 Account owner: Jim, Account Balance: $100
 New amount: 20
 ```
@@ -284,7 +285,7 @@ These classes also have methods, which are things instances can "do". Each metho
 
 Test your code:
 
-```
+```java
 MoneySaver jim = new MoneySaver("Jim", 100);
 Account a = new Account(100, jim);
 System.out.println(a);
@@ -293,7 +294,7 @@ a.deposit(10);
 System.out.println("New amount: " + a.getAmount());
 ```
 
-```
+```java
 Account owner: Jim, Account Balance: $100
 New amount: 30
 ```
@@ -306,7 +307,7 @@ New amount: 30
 
 Test your implementation!
 
-```
+```java
 MoneySaver jim = new MoneySaver("Jim", 100);
 MoneySaver bob = new MoneySaver("Bob", 200);
 Account small = new Account(20, jim);
@@ -314,7 +315,7 @@ Account big = new Account(30, bob);
 System.out.println(Account.largerAccount(small, big));
 ```
 
-```
+```java
 Account owner: Bob, Account Balance: $30
 ```
 
@@ -332,7 +333,7 @@ Realize that you can store a `CheckingAccount` instance in `myAccount` without c
 
 Note that you can't do it the other way around. Try putting this code in your project:
 
-```
+```java
 CheckingAccount specific = new Account(100, new MoneySaver("Bill", -20)); // Incompatible types error
 ```
 
@@ -342,7 +343,7 @@ This is because `CheckingAccount` is the specific subclass, and `Account` is the
 
 Test your code from this section:
 
-```
+```java
 MoneySaver jim = new MoneySaver("Jim", 100);
 jim.signUpForChecking(30);
 CheckingAccount acc = (CheckingAccount) jim.getMyAccount();
@@ -355,7 +356,7 @@ System.out.println(jim);
 System.out.println(acc);
 ```
 
-```
+```java
 Jim, My balance is: 70
 Account owner: Jim, Account Balance: $30
 Jim, My balance is: 30
@@ -369,7 +370,7 @@ The last thing we will learn about inheritance is the `abstract` keyword. The `a
 
 * You can now declare `abstract` methods. These methods have no body, but classes that extend them must define these methods. For example, let's say you had an abstract `Vehicle` class:
 
-```
+```java
 public abstract class Vehicle {
 
     int wheels;
@@ -392,7 +393,7 @@ Note that the `Car` and `Boat` classes would both have the inhereted method `get
 
 * You can no longer initialize instances of the `abstract` class. Using the above example:
 
-```
+```java
 public class Car extends Vehicle {
 	public void turnOn() {
 		...
@@ -412,7 +413,7 @@ c.turnOn();
 
 Create a new class called `Fraction`.
 
-```
+```java
 public class Fraction {
 
     private int numerator;
@@ -433,7 +434,7 @@ In the arguments, have numerator come first.
 
 Give your `Fraction` a `gcd` function, which returns the greatest common diviser of two integers. The function should have the following header:
 
-```
+```java
 public static int gcd(int m, int n)
 ```
 
@@ -441,7 +442,7 @@ and **should work if `n > m`, and vice-versa**.
 
 There's a pretty sweet recursive algorithm for `gcd` called *Euclid's Algorithm* which states that the `gcd(a, b)` is:
 
-```
+```java
 // This function assumes a>b. Your's should not!
 function gcd(a, b)
     If b is 0:
@@ -464,7 +465,7 @@ Give your `Fraction` a `add` function, which add the other fraction by this frac
 
 Create a new class called `FractionTester`. Copy-paste the following code into it. All the tests should pass:
 
-```
+```java
 public class FractionTester {
 
     public void runTests() {
