@@ -30,7 +30,7 @@ Working in a relatively large project with multiple other people will result in 
 
 ![conflict](images/conflict.png)
 
-Let's resolve the merge conflict my using `rebase`!
+Let's resolve the merge conflict! Try understanding what each line does from a conceptual perspective.
 
 ```shell
 $ git checkout master
