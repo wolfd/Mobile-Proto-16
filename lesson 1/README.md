@@ -58,7 +58,7 @@ public static int newMethodName(int a, int b) {
     // Body
 }
 ```
-What does it all mean? The code between `<<<<<<< HEAD` and `=======` is the code that you have written to your branch. And the code between `=======` and `>>>>>>>` master is the code that lives on master. It is up to you to determine which version is correct, and occassionally you will have to use code from both branches in order to create a working version. You want to presserve the feature changed you made, while also not removing features from master. Now, `git add` the files with merge conflicts. You should now be able to merge your branch to master. Once we've picked the correct version:
+What does it all mean? The code between `<<<<<<< HEAD` and `=======` is the code that you have written to your branch. And the code between `=======` and `>>>>>>> master` is the code that lives on master. It is up to you to determine which version is correct, and occassionally you will have to use code from both branches in order to create a working version. You want to presserve the feature changed you made, while also not removing features from master. Now, `git add` the files with merge conflicts. You should now be able to merge your branch to master. Once we've picked the correct version:
 
 ```shell
 $ git add -A
