@@ -160,7 +160,7 @@ This will create a basic Android application skeleton for you. We won't be using
 
 ### Hello World
 
-Copy paste into `HelloWorld.java` and read over the following code:
+**Copy paste into `HelloWorld.java` and read over the following code:**
 
 ```java
 public class HelloWorld {
@@ -172,9 +172,9 @@ public class HelloWorld {
 }
 ```
 
-A window button should appear next to the main method header. Click it to run your program!
+A window button should appear next to the main method header. **Click it to run your program!**
 
-```java
+```
 Hello World!
 ```
 
@@ -184,9 +184,9 @@ Don't worry too much yet about what all the words in `public static void main(St
 
 #### Classes
 
-Create two new classes, and copy paste the following boilerplates into them:
+**Create two new classes, and copy paste the following boilerplates into them:**
 
-```java
+```
 public class MoneySaver {
 
     private long myMoney;
@@ -226,7 +226,7 @@ public class MoneySaver {
 
 ```
 
-```java
+```
 public class Account {
 
     private MoneySaver owner;
@@ -247,22 +247,21 @@ public class Account {
 
 The constructor is a special method used to initialize instances of your class (just like Python's `__init__` method). Classes by default inherit a no-argument constructor from the default `Object` class. That means that even without epxlicitly defining a constructor, we can already initalize an `Account`:
 
-```java
-Account a = new Account() // This works!```
+```Account a = new Account() // This works!```
 
-Often, you will want to initialize your object with some values. In this case you must define your own constructor.
+Often, you will want to initialize your object with some values. In this case you must define your own constructor. You can even define multiple constructors, each with different arguments.
 
 **Go ahead and implement the `Account` constructor. It should have input arguments `long amount, MoneySaver owner`**
 
 #### Fields
 
-You'll notice both classes also have fields. Fields are either attributes of members of a class (an `amount` describes an `Account`) or things that belong to the class (an `Account` has an `owner`). **Fields should almost exclusively be `private` unless you have a *really* good reason to make it `public`.** If you want an outside class to be able to access a field, you must create public getter/setter methods.
+You'll notice both classes also have fields. Fields are either attributes of members of a class (an `amount` describes an `Account`) or things that belong to the class (an `Account` has an `owner`). *Fields should almost exclusively be `private` unless you have a really good reason to make it `public`.* If you want an outside class to be able to access a field, you must create public getter/setter methods.
 
 **Define and implement the `getAmount` and `setAmount` methods in `Account`. Make sure they have appropriate return types and input arguments.**
 
-Add the following to your main method (`public static void main(String[] args)`) to test your code so far:
+**Add the following to your main method (`public static void main(String[] args)`) to test your code so far:**
 
-```java
+```
 MoneySaver jim = new MoneySaver("Jim", 100);
 Account a = new Account(100, jim);
 System.out.println(a);
@@ -272,7 +271,7 @@ System.out.println("New amount: " + a.getAmount());
 
 Expected output:
 
-```java
+```
 Account owner: Jim, Account Balance: $100
 New amount: 20
 ```
@@ -285,7 +284,7 @@ These classes also have methods, which are things instances can "do". Each metho
 
 Test your code:
 
-```java
+```
 MoneySaver jim = new MoneySaver("Jim", 100);
 Account a = new Account(100, jim);
 System.out.println(a);
@@ -294,20 +293,18 @@ a.deposit(10);
 System.out.println("New amount: " + a.getAmount());
 ```
 
-```java
+```
 Account owner: Jim, Account Balance: $100
 New amount: 30
 ```
 
 ##### What does `static` mean?
 
-`static` methods operate on the *Class*, as opposed to *instances* of the class. You can call static methods without creating any object e.g. `Collections.sort()`. Make a method `static` if the method is something the *Class* can do.
+`static` methods operate on the *Class*, as opposed to *instances* of the class. `static` variables are properties of the entire class as opposed to instances of that class. You can call static methods without creating any objects e.g. `Collections.sort()`. Make a method `static` if the method is something the *Class* can do, and doesn't need any instance variables to work properly (`static` methods *can* require `static` variables, though).
 
-**Implement `largerAccount` in `Account`**
+**Implement `largerAccount` in `Account`. Test your implementation!**
 
-Test your implementation!
-
-```java
+```
 MoneySaver jim = new MoneySaver("Jim", 100);
 MoneySaver bob = new MoneySaver("Bob", 200);
 Account small = new Account(20, jim);
@@ -315,7 +312,7 @@ Account big = new Account(30, bob);
 System.out.println(Account.largerAccount(small, big));
 ```
 
-```java
+```
 Account owner: Bob, Account Balance: $30
 ```
 
@@ -333,7 +330,7 @@ Realize that you can store a `CheckingAccount` instance in `myAccount` without c
 
 Note that you can't do it the other way around. Try putting this code in your project:
 
-```java
+```
 CheckingAccount specific = new Account(100, new MoneySaver("Bill", -20)); // Incompatible types error
 ```
 
@@ -341,9 +338,9 @@ This is because `CheckingAccount` is the specific subclass, and `Account` is the
 
 **Give your `MoneySaver` a `withdraw` method.** You will have to [cast](http://javarevisited.blogspot.com/2012/12/what-is-type-casting-in-java-class-interface-example.html) `myAccount` to a `CheckingAccount` in order to call its `withdraw` method. This is because `Account`s don't have `withdraw` methods, only `CheckingAccount`s do. You have to explicitly tell Java that the account is a `CheckingAccount` to call `withdraw`.
 
-Test your code from this section:
+**Test your code from this section:**
 
-```java
+```
 MoneySaver jim = new MoneySaver("Jim", 100);
 jim.signUpForChecking(30);
 CheckingAccount acc = (CheckingAccount) jim.getMyAccount();
@@ -356,7 +353,7 @@ System.out.println(jim);
 System.out.println(acc);
 ```
 
-```java
+```
 Jim, My balance is: 70
 Account owner: Jim, Account Balance: $30
 Jim, My balance is: 30
@@ -370,34 +367,32 @@ The last thing we will learn about inheritance is the `abstract` keyword. The `a
 
 * You can now declare `abstract` methods. These methods have no body, but classes that extend them must define these methods. For example, let's say you had an abstract `Vehicle` class:
 
-```java
+```
 public abstract class Vehicle {
 
     int wheels;
-	
-	public Vehicle(int wheels) {
+    
+    public Vehicle(int wheels) {
         this.wheels = wheels;
-	}
+    }
 
     public int getWheels() {
         return wheels;
     }
 
-	public abstract void turnOn();
+    public abstract void turnOn();
 }
 ```
 
 This says that all classes `extend`ing `Vehicle` must implement `turnOn`. Why doesn't Vehicle implement `turnOn`? Well, what a vehicle must do to turn on depends on what kind of vehicle it is! The implementation would be quite difficult for a `Car` as opposed to a `Boat`. (Boats turn on, right?)
 
-Note that the `Car` and `Boat` classes would both have the inhereted method `getWheels()`, so you wouldn't have to implement it repetitively in each subclass.
+Note that the `Car` and `Boat` classes would both have the inhereted method `getWheels()`, so you wouldn't have to implement it repetitively in each subclass. However, you cannot initialize instances of the `abstract` class. Using the above example:
 
-* You can no longer initialize instances of the `abstract` class. Using the above example:
-
-```java
+```
 public class Car extends Vehicle {
-	public void turnOn() {
-		...
-	}
+    public void turnOn() {
+        ...
+    }
 }
 Vehicle v = new Vehicle(); // This doesn't work.
 Vehicle v = new Car(); // This works!
@@ -408,12 +403,11 @@ c.turnOn();
 
 **Make your `Account` class `abstract`. Confirm that you can't initalize it anymore.**
 
-
 # The `Fraction` class
 
-Create a new class called `Fraction`.
+**Create a new class called `Fraction`.**
 
-```java
+```
 public class Fraction {
 
     private int numerator;
@@ -426,23 +420,21 @@ public class Fraction {
 }
 ```
 
-#### Implement a constructor
-
-In the arguments, have numerator come first.
+**Implement a constructor. In the arguments, have the numerator come first.**
 
 #### `gcd`
 
-Give your `Fraction` a `gcd` function, which returns the greatest common diviser of two integers. The function should have the following header:
+**Give your `Fraction` a `gcd` function, which returns the greatest common diviser of two integers. The function should have the following header:**
 
-```java
+```
 public static int gcd(int m, int n)
 ```
 
-and **should work if `n > m`, and vice-versa**.
+and should work if `n > m`, and vice-versa.
 
 There's a pretty sweet recursive algorithm for `gcd` called *Euclid's Algorithm* which states that the `gcd(a, b)` is:
 
-```java
+```
 // This function assumes a>b. Your's should not!
 function gcd(a, b)
     If b is 0:
@@ -455,17 +447,17 @@ Why does it make sense for `gcd` to be `static`? If you're not sure, ask a peer 
 
 #### `simplify`
 
-Give your `Fraction` a `simplify` function, which simplifies the fraction. We leave it up to you to determine the proper method header. 
+**Give your `Fraction` a `simplify` function, which simplifies the fraction. We leave it up to you to determine the proper method header.**
 
 #### `add`
 
-Give your `Fraction` a `add` function, which add the other fraction by this fraction, and returns the simplified result. *This function should not modify either fraction*. You shouldn't change the [Access Modifiers](http://www.tutorialspoint.com/java/java_access_modifiers.htm) to the `numerator` and `denomenator` fields (they should be private).
+**Give your `Fraction` a `add` function, which add the other fraction by this fraction, and returns the simplified result.** *This function should not modify either fraction*. You shouldn't change the [Access Modifiers](http://www.tutorialspoint.com/java/java_access_modifiers.htm) to the `numerator` and `denomenator` fields (they should be private).
 
 ## Test your functions
 
-Create a new class called `FractionTester`. Copy-paste the following code into it. All the tests should pass:
+**Create a new class called `FractionTester`. Copy-paste the following code into it. All the tests should pass:**
 
-```java
+```
 public class FractionTester {
 
     public void runTests() {
@@ -490,6 +482,8 @@ public class FractionTester {
 
 # Animal Farm
 
+**Do the following steps:**
+
 1. Define an abstract class `Animal`. Animals have a number of `legs`, a `name`, a `color`, a `species`, and a `weight`.
 2. Implement a constructor for the Animal class.
 3. Implement getter and setter methods for each field using the `getFieldName()` `setFieldName()` naming convention. (Android Studio can do this automatically for you very quickly.)
@@ -500,3 +494,7 @@ public class FractionTester {
 8. Define `getHeaviestAnimals()` in `Farm`, which returns a new (don't modify the underlying ArrayList) sorted ArrayList.
 9. Define `printCatNames()`, which prints each cat's name to a new line in the console.
 10. Define `averageLegs()`, which returns the average number of legs amongst the animals in the farm.
+
+## Assignment
+
+Your homework is to do all bolded sections of this README.
