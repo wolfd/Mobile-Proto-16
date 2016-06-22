@@ -487,13 +487,14 @@ public class FractionTester {
 2. Implement a constructor for the Animal class.
 3. Implement getter and setter methods for each field using the `getFieldName()` `setFieldName()` naming convention. (Android Studio can do this automatically for you very quickly.)
 4. Define the abstract method `grow()`.
-5. Define the `Animal` subclasses `Cat`, `Dog`, `Cow`. Each should have a constructor with input arguments `(name, color)`. Have cats and dogs' weights be initalized randomly between 0-25, and cows 100-200.
+5. Define the `Animal` subclasses `Cat`, `Dog`, `Cow`. Each should have a constructor with input arguments `(name, color)`. If you're having trouble, check out [this](http://www.tutorialspoint.com/java/java_abstraction.htm) example. Have cats and dogs' weights be initalized randomly between 0-25, and cows 100-200.
 6. Make the `grow` method in `Cat` multiply its weight by 3, in `Dog` by 1.5, and in `Cow` by 5.
 7. Define a class `Farm`. A farm should have an `ArrayList` of `Animal`s.
 8. Define `getHeaviestAnimals()` in `Farm`, which returns a new (don't modify the underlying ArrayList) sorted ArrayList.
 9. Define `printCatNames()`, which prints each cat's name to a new line in the console.
 10. Define `averageLegs()`, which returns the average number of legs amongst the animals in the farm.
 11. Check if your methods are behaving like they are supposed to. Similar to the quick debugging "tests" we previously used, you should make instances of the classes and print the outcome of methods along with the expected outcome.
+12. To finish up this assignment, do some googling on what an `interface` in Java is. Put a comment at the top of your `Animal.java` file explaining what the difference between an `interface` and an `abstract class` is.
 
 ## Assignment
 
