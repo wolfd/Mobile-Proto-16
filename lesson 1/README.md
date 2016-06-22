@@ -47,8 +47,7 @@ Auto-merging file.java
 CONFLICT (content): Merge conflict in file.java
 Automatic merge failed; fix conflicts and then commit the result.
 ```
-
-Merge conflicts might look something like this:
+Now, we should open that specific file in a text editor (like Sublime Text or Emacs). Merge conflicts might look something like this:
 
 ```java
 <<<<<<< HEAD
