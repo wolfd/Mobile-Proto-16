@@ -47,7 +47,7 @@ Auto-merging file.java
 CONFLICT (content): Merge conflict in file.java
 Automatic merge failed; fix conflicts and then commit the result.
 ```
-Now, we should open that specific file in a text editor (like Sublime Text or Emacs). Merge conflicts might look something like this:
+Now, we should open that specific file in a text editor (for this class, it is going to be the Android Studio IDE. Usually, it is something like Sublime Text or Emacs). Merge conflicts might look something like this:
 
 ```java
 <<<<<<< HEAD
@@ -493,6 +493,7 @@ public class FractionTester {
 8. Define `getHeaviestAnimals()` in `Farm`, which returns a new (don't modify the underlying ArrayList) sorted ArrayList.
 9. Define `printCatNames()`, which prints each cat's name to a new line in the console.
 10. Define `averageLegs()`, which returns the average number of legs amongst the animals in the farm.
+11. Check if your methods are behaving like they are supposed to. Similar to the quick debugging "tests" we previously used, you should make instances of the classes and print the outcome of methods along with the expected outcome.
 
 ## Assignment
 
