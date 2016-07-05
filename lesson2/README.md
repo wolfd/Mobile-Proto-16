@@ -19,7 +19,7 @@ Android Studio just created a bunch of files and boilerplate code to get you sta
 
 There are generally three different types of files that you'll need to know about in Android Studio:
 
-1. **Java files** are where your backend logic goes.
+1. **Java files** are where your logic goes.
 2. **XML Layout files** are where you define the frontend layout of your screens.
 3. **Configuration files** are used by Android Studio to configure your app.
 
