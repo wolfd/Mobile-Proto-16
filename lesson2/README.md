@@ -63,7 +63,7 @@ Android coding conventions dictate that every user-facing string should be store
 The Manifest file defines settings about your app and what permissions it needs.  Whenever you download an app from the Play Store, it will show you what permissions the app needs (like internet, data storage, GPS location) so that users can be knowledgable about what their apps are using. These permissions are taken from the app's manifest file.
 
 #### [Gradle file](https://developer.android.com/studio/build/index.html) (build.grade (Module: app))
-Gradle is the thing that builds your app, like a compiler. Each time you launch your app to your phone to test it, gradle will run and compile your code.
+Gradle is the thing that builds your app, like a compiler. Each time you launch your app to your phone to test it, gradle will run and compile your code.  This is also where you can import any libraries you may need.
 
 ## Android Studio Overview
 Android Studio is an IDE, not a text editor. This means that Android Studio is very smart and you can use it to navigate and write code quickly.  Here's an overview of some of our favorite features:
