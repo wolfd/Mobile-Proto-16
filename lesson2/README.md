@@ -66,11 +66,12 @@ The Manifest file defines settings about your app and what permissions it needs.
 Gradle is the thing that builds your app, like a compiler. Each time you launch your app to your phone to test it, gradle will run and compile your code.  This is also where you can import any libraries you may need.
 
 ## Android Studio Overview
-Android Studio is an IDE, not a text editor. This means that Android Studio is very smart and you can use it to navigate and write code quickly.  Here's an overview of some of our favorite features:
+Android Studio (AS) is an IDE, not a text editor. This means that AS is very smart and you can use it to navigate and write code quickly.  Here's an overview of some of our favorite features:
 
 - **Auto-saving:** No need to ever press the save button, AS saves as soon as you type.
 - **Auto-compiling**: AS does some compiling in real-time, which means you'll know immediately if you've misspelled a variable or didn't pass the right parameters to a function.
 - **Smart Autocomplete:** AS will only make autocomplete suggestions that are legal and make sense in the context of the code.
+- **Git integration** AS can be set up to show you what lines of code you've changed since your last commit, and how exactly you've changed them.
 - **Documentation:** Pressing CTRL+Q will give you info for a class or method that you’ve highlighted, if you see something and don’t know what it is.
 
 ### Layout of Android Studio
