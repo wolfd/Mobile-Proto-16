@@ -59,19 +59,20 @@ The way you store data is using key-value pairs. There are two ways to create/ac
     ```
 
 So, whenever a session of the app gets created (inside `onCreate()`), you should read the shared preference file and when the app gets closed (inside `onStop()`), changes made (for ex. the backgroud color is changed to blue) should be written to the file.
-    ```java
-    // To read
-    SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-    // Default value for when the file is unavilable
-    String defaultValue = getResources().getString(R.string.saved_background_default);
-    String background = sharedPref.getString(getString(R.string.saved_background), defaultValue);
-    
-    // To write
-    SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-    SharedPreferences.Editor editor = sharedPref.edit();
-    editor.putString(getString(R.string.saved_background), currentBackground);
-    editor.commit();
-    ```
+
+```java
+// To read
+SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+// Default value for when the file is unavilable
+String defaultValue = getResources().getString(R.string.saved_background_default);
+String background = sharedPref.getString(getString(R.string.saved_background), defaultValue);
+
+// To write
+SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+SharedPreferences.Editor editor = sharedPref.edit();
+editor.putString(getString(R.string.saved_background), currentBackground);
+editor.commit();
+```
 While writing, notice that we gave it the key (`getString(R.string.saved_background)`) and the corresponding value (`currentBackground`).
 
 ### SQL
