@@ -77,6 +77,17 @@ While writing, notice that we gave it the key (`getString(R.string.saved_backgro
 
 ### SQL
 
-
+While implementing a SQLite database in Android, you almost always need to make a schema. The schema basically tells the database what columns are needed. This [page](https://developer.android.com/training/basics/data-storage/databases.html) has all the information you might need to add a SQLite database to your app. 
 
 ## App Life Cycle
+
+![](https://developer.android.com/images/training/basics/basic-lifecycle.png)
+
+When you create an new project in Android Studio, you will see a lot of boilerplate. If you are new to Android dev, you probably wouldn't have gone beyond using `onCreate()` and `onDestroy()`. But as you advance, you will realize the need for other methods. Other that the create and destroy methods, we'll use `onPause()` and `onResume`.
+
+Read through each of the lessons listed in [this page](https://developer.android.com/training/basics/activity-lifecycle/index.html).
+
+## Homework
+
+1. Make a simple app that takes an RGB value from the user. The app sets the background color to that specified RGB value and also save the value in SharedPreferences. Use the correct methods of activity life cycle to figure out where to save and retrive those preferences. Test your app by pausing, resuming, quitting and restarting the app.
+2. TODO: Wait for Bill to figure out the HW for lesson 3. It will be some form of "Add SQL storage to the shopping list app"
