@@ -37,7 +37,7 @@ Everytime you close an app and reopen it, a new session of app is created. This 
    ```
 5. [Cache](https://developer.android.com/reference/android/content/Context.html#getCacheDir()):
 
-   If you have data which qualifies this: "it would be nice to save it somewhere instead of making users type but it is no big deal if the data gets deleted", use cache. Remember that you can't store large amounts or data (>1MB) without causing problems. Also, be responsible about how you use the cache memory. Clean the space you occupied after you are done.
+   If you have data that aren't important enough to be stored safely (i.e. if deleted, the user experience won't get affected), use cache. Remember that cache isn't reliable as it gets deleteled unreliably and you can't store large amounts or data (>1MB) without causing problems. Also, be responsible about how you use the cache memory. Clean the space you occupied after you are done.
 6. [SQLite databases]():
 
    Think of SQL as a giant table of rows and columns where you can name the columns. You can also ask the table for certain values within those columns. You also have the ability to build complex queries that ask for multiple things within multiple columns. You can create multiple SQL databases for your app and all of them will be available to all parts of your app but won't be available to anything outside the app. SQL databases are also stored locally.
