@@ -35,6 +35,11 @@ listView.setAdapter(itemsAdapter);
 ```
 
 ## Debugging
+Android Studio has a built-in debugger that allows you to set breakpoints in your code and see the values of variables during runtime.  This is extremely useful when debugging your code to see exactly what is going on at every line.
+
+[This official Android guide](https://developer.android.com/studio/debug/index.html) covers all the functionality of the AS debugger.  We'll go into the basics here.
+
+To make breakpoints, just click to the left of any line in your code.  To run your app in debugging mode, click the little bug icon next to the normal "Run" button.  Select your phone, and your app will get installed and run as normal.  If you hit a line with a breakpoint while using your app, the program will freeze and the debug window will pop up.  At each line before your breakpoint, variables and their values will be displayed.  You can mouse over specific variables or boolean expressions to see their values.  Using the buttons on the top of the debug window, you can step over each line of code to see what happens step-by-step, or resume your program as normal.
 
 ## Assignment
 Before next class, make a todo app.  You should have:
