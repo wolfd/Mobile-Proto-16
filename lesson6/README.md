@@ -10,7 +10,7 @@ Android has a *ton* of APIs built in; they're useful for using hardware sensors,
 Check the sidebar in [this link](https://developer.android.com/about/versions/marshmallow/android-6.0.html) out to look at the different APIs for versions 4.1 to 6.0. [This link](https://developer.android.com/reference/android/package-summary.html) provides you with a detailed list of every Android-built API available. There are way too many to list so we won't go through them in detail, but if you've seen your phone do it, you'll find how to do it there.
 
 ## [Amazon S3](https://aws.amazon.com/s3/)
-Amazon Web Services (AWS) provides something called Amazon Simple Storage Service, AKA Amazon S3. As the name implies, it's a cloud storage service. Now, instead of locally storing data on your phone you can use S3 and save it on the cloud! This is great for applications that need to share or store a lot of data.
+Amazon Web Services (AWS) provides something called Amazon Simple Storage Service, AKA Amazon S3. As the name implies, it's a cloud storage service. The cloud is basically just a bunch of servers that are made available to the developers and people. When you're storing something in "the cloud", you're just putting it on a server somewhere else that you have access to. Now, instead of locally storing data on your phone you can use S3 and save it on the cloud! This is great for applications that need to share or store a lot of data.
 
 Follow [these instructions](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transferutility.html) to set up your own S3 bucket (a cloud storage container). If you're interested in learning more about S3 past what the link above says, then check out AWS's [documentation](https://docs.aws.amazon.com/sdkfornet1/latest/apidocs/html/N_Amazon_S3_Transfer.htm).
 
@@ -23,7 +23,7 @@ Since we talked about APIs, we'll introduce some key libraries as well.
 ## HTTP requests
 *Note: this portion was constructed borrowing heavily from [these](https://developer.android.com/training/volley/simple.html) Android docs. Feel free to check them out for more information*
 
-Many websites or companies offer RESTful APIs (application program interfaces) for other developers to use. REST APIs are APIs that allow you to access them using the HTTP verbs you may already be familiar with, such as `GET`, and `POST`. For your future labs and project, you may want to incorporate functionality with Twitter, Spotify, or Instagram, all of which have a REST API available.
+Many websites or companies offer RESTful APIs (application program interfaces) for other developers to use. REST (REpresentational State Transfer) APIs are APIs that allow you to access them using the HTTP verbs you may already be familiar with, such as `GET`, and `POST`. For your future labs and project, you may want to incorporate functionality with Twitter, Spotify, or Instagram, all of which have a REST API available.
 
 The Android framework offers a specific protocol for making http requests. Android provides the HTTP library `Volley`. Add the following to your gradle:
 
@@ -34,7 +34,7 @@ compile 'com.android.volley:volley:1.0.0'
 and add the `android.permission.INTERNET` to your app's manifest.
 
 ### `RequestQueue`
-You use Volley by creating a `RequestQueue` and passing it `Request` objects. The Queue handles making all of your requests for you, and therefor you should only have one. The Queue will make all your requests and receive their responses.
+You use Volley by creating a `RequestQueue` and passing it `Request` objects. The Queue handles making all of your requests for you, and therefore you should only have one. The Queue will make all your requests and receive their responses.
 
 Volley provides the function `newRequestQueue` to set up a RequestQueue. Here's an example of making a GET request to `google.com`:
 
@@ -66,7 +66,7 @@ queue.add(stringRequest);
 Volley always delivers responses on the main thread. This allows you to update UI elements directly in the response listener. Ie, you make an HTTP request to Twitter to search for a tweet, and once a response comes in, you can directly update a TextView with the contents of the tweet.
 
 ### Singleton Pattern
-If you are constantly making requests in your app, you will want to use a single instance of a `RequestQueue` that lasts the lifetime of your app. The way you do this is with a singleton class.
+If you are constantly making requests in your app (for example, you make multiple requests to different APIs when your app loads, or whenever the user presses a button a request is made), you will want to use a single instance of a `RequestQueue` that lasts the lifetime of your app. The way you do this is with a singleton class.
 
 The `RequestQueue` must be instantiated in your Application as opposed to your Activity. This is so the queue does not get recreated when the activity is (such as when the device is rotated).
 
