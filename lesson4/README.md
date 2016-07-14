@@ -87,7 +87,35 @@ When you create an new project in Android Studio, you will see a lot of boilerpl
 
 Read through each of the lessons listed in [this page](https://developer.android.com/training/basics/activity-lifecycle/index.html).
 
+Below are some important excerpts from each lesson.
+
+1. Starting An Activity:
+
+   **Resumed**: In this state, the activity is in the foreground and the user can interact with it. (Also sometimes referred to as the "running" state.)
+
+   **Paused**: In this state, the activity is partially obscured by another activity—the other activity that's in the foreground is semi-transparent or doesn't cover the entire screen. The paused activity does not receive user input and cannot execute any code.
+
+   **Stopped**: In this state, the activity is completely hidden and not visible to the user; it is considered to be in the background. While stopped, the activity instance and all its state information such as member variables is retained, but it cannot execute any code.
+
+2. Pausing and Resuming an Activity:
+   
+   Pausing: Generally, you should not use `onPause()` to store user changes (such as personal information entered into a form) to permanent storage. The only time you should persist user changes to permanent storage within `onPause()` is when you're certain users expect the changes to be auto-saved (such as when drafting an email). However, you should avoid performing CPU-intensive work during `onPause()`, such as writing to a database, because it can slow the visible transition to the next activity (you should instead perform heavy-load shutdown operations during `onStop()`).
+
+   Resuming: Be aware that the system calls this method every time your activity comes into the foreground, including when it's created for the first time. As such, you should implement `onResume()` to initialize components that you release during `onPause()` and perform any other initializations that must occur each time the activity enters the Resumed state (such as begin animations and initialize components only used while the activity has user focus).
+   
+3. Stopping and Restarting an Activity:
+   
+   Stopping: When your activity receives a call to the `onStop()` method, it's no longer visible and should release almost all resources that aren't needed while the user is not using it. Once your activity is stopped, the system might destroy the instance if it needs to recover system memory. In extreme cases, the system might simply kill your app process without calling the activity's final onDestroy() callback, so it's important you use `onStop()` to release resources that might leak memory. Although the `onPause()` method is called before `onStop()`, you should use `onStop()` to perform larger, more CPU intensive shut-down operations, such as writing information to a database.
+
+   Restarting: When your activity comes back to the foreground from the stopped state, it receives a call to onRestart(). The system also calls the `onStart()` method, which happens every time your activity becomes visible (whether being restarted or created for the first time). The `onRestart()` method, however, is called only when the activity resumes from the stopped state, so you can use it to perform special restoration work that might be necessary only if the activity was previously stopped, but not destroyed. It's uncommon that an app needs to use `onRestart()` to restore the activity's state, so there aren't any guidelines for this method that apply to the general population of apps. However, because your `onStop()` method should essentially clean up all your activity's resources, you'll need to re-instantiate them when the activity restarts. Yet, you also need to instantiate them when your activity is created for the first time (when there's no existing instance of the activity). For this reason, you should usually use the `onStart()` callback method as the counterpart to the `onStop()` method, because the system calls `onStart()` both when it creates your activity and when it restarts the activity from the stopped state.
+   
+4. Recreating an Activity
+   
+   By default, the system uses the **Bundle** instance state to save information about each **View** object in your activity layout (such as the text value entered into an `EditText` object). So, if your activity instance is destroyed and recreated, the state of the layout is restored to its previous state with no code required by you. However, your activity might have more state information that you'd like to restore, such as member variables that track the user's progress in the activity.
+
+   To save additional data about the activity state, you must override the `onSaveInstanceState()` callback method. The system calls this method when the user is leaving your activity and passes it the **Bundle** object that will be saved in the event that your activity is destroyed unexpectedly. If the system must recreate the activity instance later, it passes the same **Bundle** object to both the `onRestoreInstanceState()` and `onCreate()` methods.
+
 ## Homework
 
-1. Make a simple app that takes an RGB value from the user. The app sets the background color to that specified RGB value and also save the value in SharedPreferences. Use the correct methods of activity life cycle to figure out where to save and retrive those preferences. Test your app by pausing, resuming, quitting and restarting the app.
-2. TODO: Wait for Bill to figure out the HW for lesson 3. It will be some form of "Add SQL storage to the shopping list app"
+In the previous ToDo list app, save the data in a SQL database. Use the correct methods of activity life cycle to figure out where to save and retrive those preferences. Test your app by pausing, resuming, quitting and restarting the app.
+
