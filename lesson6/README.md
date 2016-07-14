@@ -139,7 +139,7 @@ RequestQueue queue = MySingleton.getInstance(this.getApplicationContext()).
 MySingleton.getInstance(this).addToRequestQueue(stringRequest);
 ```
 
-One more important aspect of Volley: **you don't have to specify for requests to be done asynchronously!** Volley handles all requests on a separate thread and deals with multi-threading for you, and returns all responses to the main thread.
+Programs run one line at a time. If you have a single expression that is slow, it can cause your app to lag. This is generally not an issue, most statements are fast. However, you don't know how fast/slow an API will respond. If your program waited for APIs to respond this would be problematic. However, one more important aspect of Volley: **you don't have to specify for requests to be done asynchronously!** Volley handles all requests on a separate thread and deals with multi-threading for you, and returns all responses to the main thread. Rather than waiting for a request to execute code, the response listener gets called whenever the API responds. Additionally, you can put several requests in the queue and they will all be made one after another, without waiting for each to respond before making the next request.
 
 ## Assignment
 Your homework is to create an application using Twitter's (RESTful API)[https://dev.twitter.com/rest/public/search]. Create a UI that allows the user to search for a given tweet by phrase, and displays 5 results. Allow the user to swipe right to dismiss these 5 results and bring up the next 5. If they swipe left, you should bring up the previous 5. If the user taps a tweet, open the tweet in the user's web browser or twitter client.
