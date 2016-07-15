@@ -12,6 +12,8 @@ Unfortunately, this is not as simple as just making a `ListView` and attaching a
 
 In our Snapchat example, the data source would be an `ArrayList` of strings of our Snapchat friends' names.  The `Adapter` would handle displaying the name in a `TextView`, and also displaying the little icon to indicate whether you have an unread snap from them.  The `ListView` would handle displaying all your friends and making it scrollable when there's not enough room on the screen for the whole list.  It would also handle the logic for displaying your snap when you click on a friend with an unread snap, or replying when you double-click on a friend.
 
+Note that an `Adapter` can be used for other things too, not just for a `ListView`.  An `Adapter` is basically a bridge between a data source and some kind of `View`.
+
 For simple lists where you just want to display a list of strings in a `TextView`, you can use Google's built-in `ArrayAdapter`.  If you want to make a more complex display, such as including a picture or a button on each row, then you will need to create your own custom `Adapter`.  Just like you made a layout .xml file when creating the view for your fragment, you can make a layout xml file for your `Adapter` to position where each component goes in the row.  For the built-in `ArrayAdapter` you can pass in Google's built-in `simple_list_item_1` as your layout file, which fills the row with a `TextView`.
 
 ### Code
