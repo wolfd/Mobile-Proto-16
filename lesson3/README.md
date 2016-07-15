@@ -42,14 +42,14 @@ Android Studio has a built-in debugger that allows you to set breakpoints in you
 To make breakpoints, just click to the left of any line in your code.  To run your app in debugging mode, click the little bug icon next to the normal "Run" button.  Select your phone, and your app will get installed and run as normal.  If you hit a line with a breakpoint while using your app, the program will freeze and the debug window will pop up.  At each line before your breakpoint, variables and their values will be displayed.  You can mouse over specific variables or boolean expressions to see their values.  Using the buttons on the top of the debug window, you can step over each line of code to see what happens step-by-step, or resume your program as normal.
 
 ## Assignment
-Before next class, make a todo app.  You should have:
+Before next class, make a todo app.  Requirements:
 - A way to add new todo items.
 - A display of all the current todo items.
 - A way to delete items when the user completes them.
 - A way to edit an item.
+- Use a custom `Adapter`. You could make an icon that changes when the item is completed, or make each item have an inline edit/complete button, but make something custom that goes beyond an `ArrayAdapter`.
 
 Stretch goals (optional):
-- Use a custom `Adapter`! You could make an icon that changes when the item is completed, or make each item have an inline edit/complete button.
 - Have each item have a description that displays when you click on it, maybe in an `AlertDialog` or a different fragment.
 
 The details of how to implement this are up to you.
