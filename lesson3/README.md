@@ -39,7 +39,16 @@ Android Studio has a built-in debugger that allows you to set breakpoints in you
 
 [This official Android guide](https://developer.android.com/studio/debug/index.html) covers all the functionality of the AS debugger.  We'll go into the basics here.
 
-To make breakpoints, just click to the left of any line in your code.  To run your app in debugging mode, click the little bug icon next to the normal "Run" button.  Select your phone, and your app will get installed and run as normal.  If you hit a line with a breakpoint while using your app, the program will freeze and the debug window will pop up.  At each line before your breakpoint, variables and their values will be displayed.  You can mouse over specific variables or boolean expressions to see their values.  Using the buttons on the top of the debug window, you can step over each line of code to see what happens step-by-step, or resume your program as normal.
+To make breakpoints, just click to the left of any line in your code.  To run your app in debugging mode, click the little bug icon next to the normal "Run" button.  Select your phone, and your app will get installed and run as normal.  If you hit a line with a breakpoint while using your app, the program will freeze and the debug window will pop up.  At each line before your breakpoint, variables and their values will be displayed.  You can mouse over specific variables or boolean expressions to see their values.
+
+Using the buttons on the top of the debug window, you can do a couple useful things:
+
+- Step Over: go to the next line of code without entering a method at the current line 
+- Step Into: go to the first line of the inside method called at the current line 
+- Step Out: go to the next line outside the current method 
+- Resume Program: continue the program normally (or advance to the next breakpoint if you have other breakpoints)
+
+If you want more information about debugging, [this guide](http://blog.strv.com/debugging-in-android-studio-as/) goes into more detail and is easy to read.
 
 ## Assignment
 Before next class, make a todo app.  Requirements:
