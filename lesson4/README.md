@@ -117,5 +117,5 @@ Below are some important excerpts from each lesson.
 
 ## Homework
 
-In the previous ToDo list app, save the data in a SQL database. Use the correct methods of activity life cycle to figure out where to save and retrive those preferences. Test your app by pausing, resuming, quitting and restarting the app.
+We'll be using two kinds of storage to save the data in our Todo app. All the *Settings* should be saved using SharedPreferences. Use a SQL database to save the todos as well as their status. Use the correct methods of activity life cycle to figure out where to save and retrive those preferences. Test your app by pausing, resuming, quitting and restarting the app.
 
