@@ -184,7 +184,7 @@ Using the buttons on the top of the debug window, you can do a couple useful thi
 If you want more information about debugging, [this guide](http://blog.strv.com/debugging-in-android-studio-as/) goes into more detail and is easy to read.
 
 ## Assignment
-Before next class, make a todo app.  Requirements:
+Before next class, you're going to modify your todo app from Lesson 2 to use what you learned today.  Requirements:
 - A way to add new todo items.
 - A display of all the current todo items.
 - A way to delete items when the user completes them.
