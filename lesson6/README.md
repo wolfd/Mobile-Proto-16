@@ -141,7 +141,45 @@ MySingleton.getInstance(this).addToRequestQueue(stringRequest);
 
 Programs run one line at a time. If you have a single expression that is slow, it can cause your app to lag. This is generally not an issue, most statements are fast. However, you don't know how fast/slow an API will respond. If your program waited for APIs to respond this would be problematic. However, one more important aspect of Volley: **you don't have to specify for requests to be done asynchronously!** Volley handles all requests on a separate thread and deals with multi-threading for you, and returns all responses to the main thread. Rather than waiting for a request to execute code, the response listener gets called whenever the API responds. Additionally, you can put several requests in the queue and they will all be made one after another, without waiting for each to respond before making the next request.
 
+### URI building
+
+Constructing the proper search URL by hand, by concatenating strings together and replacing spaces with ampersands can be a real pain. Fortunately, there's a library that simplifies this process called URIBuilder. Check out (this)[http://stackoverflow.com/questions/19167954/use-uri-builder-in-android-or-create-url-with-variables] stackoverflow for some example code.
+
+### JSONs
+
+You can also request your data come back in JSON form (which is basically just nested dictionaries and lists, if you are familiar with Python). Volley provides two classes: `JsonObjectRequest` and `JsonArrayRequest` to request objects and arrays ((docs)[https://developer.android.com/training/volley/request.html]). These objects are also a lot easier to parse than a String.
+
+Additionally, you can parse Strings into JSONs manually on your own using Google's `JSON.simple` library. Just add `
+compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+` to your gradle. You can then do stuff like:
+
+```java
+JSONObject j = (JSONObject) new JSONParser().parse("{"Cats": 3, "Dogs": 4}");
+j.get("Dogs");  // 4
+```
+
+Manually writing code to figure out the location of the `4` would have been quite annoying.
+
 ## Assignment
-Your homework is to create an application using Twitter's (RESTful API)[https://dev.twitter.com/rest/public/search]. Create a UI that allows the user to search for a given tweet by phrase, and displays 5 results. Allow the user to swipe right to dismiss these 5 results and bring up the next 5. If they swipe left, you should bring up the previous 5. If the user taps a tweet, open the tweet in the user's web browser or twitter client.
+
+*You have two apps to create for next class:*
+
+### Stock App
+
+Create an application that allows the user to enter in the stock tickets for one or multiple companies, and display the current price for each company. How you display them is up to you, but make sure it is intuitive to a user. One way you could do it is with a custom ListView, where each element has a search box on the left and displays the price on the right.
+
+We recommend using Google's stock API. Here's an example of a url that gives you Microsoft and Apple's current prices:
+
+```
+http://finance.google.com/finance/info?client=iq&q=aapl,msft
+``` 
+
+And the output:
+
+```
+// [ { "id": "22144" ,"t" : "AAPL" ,"e" : "NASDAQ" ,"l" : "98.66" ,"l_fix" : "98.66" ,"l_cur" : "98.66" ,"s": "0" ,"ltt":"4:00PM EDT" ,"lt" : "Jul 22, 4:00PM EDT" ,"lt_dts" : "2016-07-22T16:00:01Z" ,"c" : "-0.77" ,"c_fix" : "-0.77" ,"cp" : "-0.77" ,"cp_fix" : "-0.77" ,"ccol" : "chr" ,"pcls_fix" : "99.43" } ,{ "id": "358464" ,"t" : "MSFT" ,"e" : "NASDAQ" ,"l" : "56.57" ,"l_fix" : "56.57" ,"l_cur" : "56.57" ,"s": "0" ,"ltt":"4:00PM EDT" ,"lt" : "Jul 22, 4:00PM EDT" ,"lt_dts" : "2016-07-22T16:00:02Z" ,"c" : "+0.77" ,"c_fix" : "0.77" ,"cp" : "1.38" ,"cp_fix" : "1.38" ,"ccol" : "chg" ,"pcls_fix" : "55.8" } ]
+```
+
+### S3 App
 
 Instead of using local storage for the app you've made in previous classes, switch to using S3.
