@@ -9,9 +9,13 @@
     tools:context="com.example.abrahams.homework.MainActivityFragment"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
+        android:hint="Search twitter.."
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
