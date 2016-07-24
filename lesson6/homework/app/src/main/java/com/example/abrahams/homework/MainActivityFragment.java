@@ -1,7 +1,9 @@
 package com.example.abrahams.homework;
 
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +37,7 @@ public class MainActivityFragment extends Fragment {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    searchTwitter(editText.getText().toString());
                     return true;
                 }
                 return false;
@@ -42,7 +47,25 @@ public class MainActivityFragment extends Fragment {
     }
 
     public void searchTwitter(String search) {
-        
+        // Get a RequestQueue
+        RequestQueue queue = MySingleton.getInstance(this.getActivity().getApplicationContext()).
+                getRequestQueue();
+
+        Uri.Builder builder = new Uri.Builder();
+        builder.scheme("https")
+                .authority("api.twitter.com/1.1/search/tweets.json")
+//                .appendPath("turtles")
+//                .appendPath("types")
+                .appendQueryParameter("q", "Donald Trump");
+//                .appendQueryParameter("sort", "relevance")
+//                .fragment("section-name");
+        String myUrl = builder.build().toString();
+        Log.d("my tag", myUrl);
+
+        // Add a request (in this example, called stringRequest) to your RequestQueue.
+//        MySingleton.getInstance(this.getActivity()).addToRequestQueue(stringRequest);
+
+
     }
 
 }
