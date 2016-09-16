@@ -4,9 +4,19 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <Switch
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/night_mode"
-            android:id="@+id/night_mode_switch"/>
+            android:text="@string/make_background_color_green"
+            android:id="@+id/button_background_green" android:layout_gravity="center_horizontal"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make_background_color_blue"
+            android:id="@+id/button_background_blue" android:layout_gravity="center_horizontal"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make_background_color_red"
+            android:id="@+id/button_background_red" android:layout_gravity="center_horizontal"/>
 </LinearLayout>

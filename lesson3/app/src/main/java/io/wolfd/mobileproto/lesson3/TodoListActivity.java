@@ -1,5 +1,7 @@
 package io.wolfd.mobileproto.lesson3;
 
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,13 +13,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class TodoListActivity extends AppCompatActivity {
-    private static final String TAG_TODO_LIST_FRAGMENT = "todo_list_fragment";
-    private TodoListFragment todoListFragment;
+    private static final String PREFS_NAME = "TodoListAppSettings";
+    private static final String BACKGROUND_COLOR_PREF = "backgroundColor";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todolist);
+
+        // Restore preferences
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        int backgroundColor = settings.getInt(
+                BACKGROUND_COLOR_PREF,
+                Color.WHITE
+        );
+
+        getWindow().getDecorView().setBackgroundColor(backgroundColor);
 
         // Check that the activity is using the layout with
         // "fragment_container"
@@ -27,7 +39,10 @@ public class TodoListActivity extends AppCompatActivity {
                 return;
             }
 
+            Bundle todoListBundle = new Bundle();
+
             TodoListFragment todoListFragment = new TodoListFragment();
+            todoListFragment.setArguments(todoListBundle);
 
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragment_container, todoListFragment).commit();
@@ -70,5 +85,21 @@ public class TodoListActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setBackgroundColor(int color) {
+        getWindow().getDecorView().setBackgroundColor(color);
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        editor.putInt(BACKGROUND_COLOR_PREF, color);
+
+        editor.apply();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
     }
 }

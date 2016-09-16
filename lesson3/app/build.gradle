@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "mobileproto.io.wolfd.lesson3"
+        applicationId "io.wolfd.mobileproto.lesson3"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
