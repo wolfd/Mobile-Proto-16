@@ -24,11 +24,13 @@ public class TodoListActivity extends AppCompatActivity {
         // Restore preferences
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
+        // load the color preference from shared preferences
         int backgroundColor = settings.getInt(
                 BACKGROUND_COLOR_PREF,
                 Color.WHITE
         );
 
+        // set the activity's root view color to the stored value
         getWindow().getDecorView().setBackgroundColor(backgroundColor);
 
         // Check that the activity is using the layout with
@@ -41,6 +43,8 @@ public class TodoListActivity extends AppCompatActivity {
 
             Bundle todoListBundle = new Bundle();
 
+            // make the TodoListFragment, because we are going to swap it out later, we don't
+            // want it to be in the XML
             TodoListFragment todoListFragment = new TodoListFragment();
             todoListFragment.setArguments(todoListBundle);
 
@@ -51,6 +55,7 @@ public class TodoListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // I'm going to leave the fab in for the next assignment
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +92,10 @@ public class TodoListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Set and save the background color setting
+     * @param color
+     */
     public void setBackgroundColor(int color) {
         getWindow().getDecorView().setBackgroundColor(color);
 
