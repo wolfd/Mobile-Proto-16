@@ -15,9 +15,11 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
+        // basic settings here.
         view.findViewById(R.id.button_background_blue).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // get the parent activity and call the public setBackgroundColor method
                 final FragmentActivity activity = getActivity();
 
                 ((TodoListActivity) activity).setBackgroundColor(Color.BLUE);
