@@ -14,6 +14,9 @@ import io.wolfd.mobileproto.lesson3.R;
 /**
  * On click listener for each todo item.
  * Needs the context to create the EditText widget.
+ * I like your custom Listener implementation. I would advise against statically holding a Context
+ * reference because you can get it from the View that's passed into onClick (which guaranttes you
+ * get the right reference).
  */
 public class TodoOnClickListener implements View.OnClickListener {
 
