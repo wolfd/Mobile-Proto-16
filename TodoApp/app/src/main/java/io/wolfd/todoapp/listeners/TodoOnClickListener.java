@@ -50,6 +50,9 @@ public class TodoOnClickListener implements View.OnClickListener {
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE
         );
 
+        // set cursor to after the last character
+        input.setSelection(input.getText().toString().length());
+
         editDialog.show();
     }
 }

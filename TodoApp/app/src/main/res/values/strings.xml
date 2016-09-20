@@ -8,4 +8,6 @@
     <string name="set_todo_item_text">Set Todo Text</string>
     <string name="set_todo_item_text_save_button">Save</string>
     <string name="tap_to_set">tap here to set</string>
+    <string name="delete_todo_item">Delete item</string>
+    <string name="delete">Delete</string>
 </resources>
