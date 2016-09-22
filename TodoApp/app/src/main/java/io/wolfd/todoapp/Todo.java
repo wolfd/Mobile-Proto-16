@@ -1,6 +1,7 @@
 package io.wolfd.todoapp;
 
 public class Todo {
+    // Nice class! Dope.
     private String text;
     private boolean isComplete;
 
@@ -17,6 +18,7 @@ public class Todo {
         this.text = text;
     }
 
+    // Never used, but good thought including it now, it would be useful in the future to include a 'clear all' function
     public boolean isComplete() {
         return isComplete;
     }

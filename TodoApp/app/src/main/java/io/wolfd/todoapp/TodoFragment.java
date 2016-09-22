@@ -40,6 +40,8 @@ public class TodoFragment extends Fragment {
         // Create the adapter to convert the array to views
         final TodosAdapter adapter = new TodosAdapter(getContext(), todoArrayList);
 
+        // Another thing you could do here for better usability is pop up a dialog to allow them to
+        // immediately set the text, but that's not really a big issue
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -13,6 +13,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TodoActivity extends AppCompatActivity {
+
+    /*
+    Overall, everything looks good here - appears that you're getting a quick
+    handle on Android conventions. Nothing is too sketchy, though I do appreciate
+    your concern with doing things the non-sketchy ways. Feel free to hit me up
+    whenever you have questions on this topic
+     */
+
     private static final String PREFS_NAME = "TodoListAppSettings";
     private static final String BACKGROUND_COLOR_PREF = "backgroundColor";
 
@@ -24,7 +32,7 @@ public class TodoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_todo);
 
         // Restore preferences
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0); // Nice!
 
         // load the color preference from shared preferences
         int backgroundColor = settings.getInt(

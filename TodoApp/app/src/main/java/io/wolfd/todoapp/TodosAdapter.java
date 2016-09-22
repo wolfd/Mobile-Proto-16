@@ -31,6 +31,7 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
 
         TextView todoText = (TextView) convertView.findViewById(R.id.todo_text);
         // Populate the data into the template view using the data object
+        // There may be cases where getText will return null, although setText is resilient to this
         todoText.setText(todo.getText());
 
         // Get the linear layout that surrounds the text field (bigger tap area)
@@ -39,6 +40,7 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
         // Edit text listener
         todoTextWrapper.setOnClickListener(new TodoOnClickListener(getContext(), todo));
 
+        // Nice extra functionality! I like it +1
         // remove item dialog
         todoTextWrapper.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
