@@ -12,11 +12,16 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import io.wolfd.todoapp.data.Todo;
+import io.wolfd.todoapp.data.TodoDbHelper;
 import io.wolfd.todoapp.listeners.TodoOnClickListener;
 
 public class TodosAdapter extends ArrayAdapter<Todo> {
-    public TodosAdapter(Context context, ArrayList<Todo> todos) {
+    private final TodoDbHelper dbHelper;
+
+    public TodosAdapter(Context context, ArrayList<Todo> todos, TodoDbHelper dbHelper) {
         super(context, 0, todos);
+        this.dbHelper = dbHelper;
     }
 
     @Override
@@ -37,7 +42,7 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
         View todoTextWrapper = convertView.findViewById(R.id.todo_text_wrapper);
 
         // Edit text listener
-        todoTextWrapper.setOnClickListener(new TodoOnClickListener(getContext(), todo));
+        todoTextWrapper.setOnClickListener(new TodoOnClickListener(getContext(), todo, dbHelper));
 
         // remove item dialog
         todoTextWrapper.setOnLongClickListener(new View.OnLongClickListener() {
@@ -51,6 +56,7 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 remove(todo);
+                                dbHelper.deleteTodo(todo);
                             }
                         })
                         .create();
@@ -61,6 +67,7 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
         });
 
         CheckBox todoCompleted = (CheckBox) convertView.findViewById(R.id.todo_checkbox_completed);
+        todoCompleted.setChecked(todo.isComplete());
 
         // save the checked data in the object
         todoCompleted.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +80,8 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
                 } else {
                     todo.setComplete(false);
                 }
+
+                dbHelper.updateTodo(todo);
             }
         });
 

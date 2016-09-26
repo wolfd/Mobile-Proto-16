@@ -6,10 +6,10 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import io.wolfd.todoapp.R;
-import io.wolfd.todoapp.Todo;
+import io.wolfd.todoapp.data.Todo;
+import io.wolfd.todoapp.data.TodoDbHelper;
 
 /**
  * On click listener for each todo item.
@@ -18,10 +18,12 @@ import io.wolfd.todoapp.Todo;
 public class TodoOnClickListener implements View.OnClickListener {
     private final Context context;
     private Todo todo;
+    private final TodoDbHelper dbHelper;
 
-    public TodoOnClickListener(Context context, Todo todo) {
+    public TodoOnClickListener(Context context, Todo todo, TodoDbHelper dbHelper) {
         this.context = context;
         this.todo = todo;
+        this.dbHelper = dbHelper;
     }
 
     @Override
@@ -41,6 +43,7 @@ public class TodoOnClickListener implements View.OnClickListener {
                     public void onClick(DialogInterface dialog, int which) {
                         final String savedText = input.getText().toString(); // get the new value
                         todo.setText(savedText); // save the new value
+                        dbHelper.updateTodo(todo);
                     }
                 })
                 .create();

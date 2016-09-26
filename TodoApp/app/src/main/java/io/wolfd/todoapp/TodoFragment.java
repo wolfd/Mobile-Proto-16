@@ -1,5 +1,6 @@
 package io.wolfd.todoapp;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.wolfd.todoapp.data.Todo;
+import io.wolfd.todoapp.data.TodoDbHelper;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -25,9 +28,6 @@ public class TodoFragment extends Fragment {
         super();
 
         todoArrayList = new ArrayList<>();
-        // Construct the data source
-        //TODO: load data from here
-        todoArrayList.add(new Todo("Load data from SQL", false));
     }
 
     @Override
@@ -37,13 +37,19 @@ public class TodoFragment extends Fragment {
 
         ButterKnife.bind(this, view);
 
+        final TodoDbHelper dbHelper = new TodoDbHelper(getContext());
+
+        // Load todos from database
+        todoArrayList = dbHelper.getTodos();
+
         // Create the adapter to convert the array to views
-        final TodosAdapter adapter = new TodosAdapter(getContext(), todoArrayList);
+        final TodosAdapter adapter = new TodosAdapter(getContext(), todoArrayList, dbHelper);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                adapter.add(new Todo("tap here to set", false));
+                Todo newTodo = dbHelper.createTodo();
+                adapter.add(newTodo);
             }
         });
 
