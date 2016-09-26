@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:srcCompat="@mipmap/ic_launcher"
+                    android:id="@+id/imageView2" android:scaleType="centerCrop"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/profile_pic_name">
+                <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" app:srcCompat="@mipmap/ic_launcher"
+                        android:id="@+id/imageView3" android:layout_weight="0"
+                        android:layout_margin="@dimen/text_margin"
+                        android:scaleType="fitStart"/>
+                <TextView
+                        android:text="@string/person_name_example_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView"
+                        android:layout_margin="@dimen/text_margin"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:layout_weight="0">
+                <Button
+                        android:text="@string/friends"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/button5"
+                        android:layout_weight="1"/>
+                <Button
+                        android:text="@string/following"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/button4"
+                        android:layout_weight="1"/>
+                <Button
+                        android:text="@string/message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/button3"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+                <TextView
+                        android:text="Product Manager at Facebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/works"
+                        android:layout_margin="@dimen/post_item_margin"
+                        android:layout_weight="0"/>
+                <TextView
+                        android:text="Studied Robotics at Olin College of Engineering"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/studied"
+                        android:layout_margin="@dimen/post_item_margin"/>
+                <TextView
+                        android:text="Lives in San Francisco, California"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/lives"
+                        android:layout_margin="@dimen/post_item_margin"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
