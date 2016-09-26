@@ -126,11 +126,14 @@ public class TodoDbHelper extends SQLiteOpenHelper {
         String selection = TodoContract.TodoEntry._ID + " = ?";
         String[] selectionArgs = { Long.toString(todo.getId()) };
 
-        int count = db.update(
+        db.update(
                 TodoContract.TodoEntry.TABLE_NAME,
                 values,
                 selection,
-                selectionArgs);
+                selectionArgs
+        );
+
+        db.close();
     }
 
     public void deleteTodo(Todo todo) {
@@ -145,5 +148,7 @@ public class TodoDbHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs
         );
+
+        db.close();
     }
 }

@@ -67,6 +67,8 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
         });
 
         CheckBox todoCompleted = (CheckBox) convertView.findViewById(R.id.todo_checkbox_completed);
+        // this makes the view look weird when you delete an item, as the view doesn't get deleted
+        // everything gets animated to the next state, as the list positions are changed.
         todoCompleted.setChecked(todo.isComplete());
 
         // save the checked data in the object
@@ -81,6 +83,7 @@ public class TodosAdapter extends ArrayAdapter<Todo> {
                     todo.setComplete(false);
                 }
 
+                // persist change
                 dbHelper.updateTodo(todo);
             }
         });

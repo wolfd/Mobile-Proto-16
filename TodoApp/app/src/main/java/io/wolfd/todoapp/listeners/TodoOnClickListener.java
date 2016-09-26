@@ -43,7 +43,7 @@ public class TodoOnClickListener implements View.OnClickListener {
                     public void onClick(DialogInterface dialog, int which) {
                         final String savedText = input.getText().toString(); // get the new value
                         todo.setText(savedText); // save the new value
-                        dbHelper.updateTodo(todo);
+                        dbHelper.updateTodo(todo); // persist the change
                     }
                 })
                 .create();
