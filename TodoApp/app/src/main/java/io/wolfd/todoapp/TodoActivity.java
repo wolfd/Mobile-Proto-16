@@ -82,8 +82,14 @@ public class TodoActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.action_remove_completed) {
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
+
+
 
     /**
      * Set and save the background color setting
