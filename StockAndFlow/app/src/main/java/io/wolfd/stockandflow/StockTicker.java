@@ -28,10 +28,16 @@ public class StockTicker {
         return price;
     }
 
+    /**
+     * Get price string for displaying in a view
+     * @return friendly price string
+     */
     public String getPriceString() {
         if (price == -1d) {
             return "Loading...";
         }
+
+        // this is not internationalized
         return NumberFormat.getCurrencyInstance(
                 new Locale("en", "US")
         ).format(getPrice());
@@ -41,6 +47,10 @@ public class StockTicker {
         this.price = price;
     }
 
+    /**
+     * Return the historical data as a LineDataSet
+     * @return
+     */
     public LineDataSet getHistoricalGraphData() {
         ArrayList<Entry> entries = new ArrayList<>();
 
@@ -55,6 +65,10 @@ public class StockTicker {
         return new LineDataSet(entries, "Price");
     }
 
+    /**
+     * Get the minimum price over the stored history
+     * @return
+     */
     public double getPriceMin() {
         double min = 0;
 

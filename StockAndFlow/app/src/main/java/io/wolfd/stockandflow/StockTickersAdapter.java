@@ -47,8 +47,32 @@ public class StockTickersAdapter extends ArrayAdapter<StockTicker> {
         stockPrice.setText(stockTicker.getPriceString());
 
         final LineChart chart = (LineChart) convertView.findViewById(R.id.chart);
-        final YAxis axis = chart.getAxisLeft();
 
+        setupLineChart(chart);
+
+        setHistoricalGraphData(stockTicker, chart);
+
+        // Fire off network requests
+        // TODO: move these to a better place, cache data better
+        StockFetchManager.fetchStock(stockTicker, requestQueue, stockPrice);
+        StockFetchManager.fetchHistorical(stockTicker, requestQueue, chart);
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StockFetchManager.fetchStock(stockTicker, requestQueue, stockPrice);
+            }
+        });
+
+        return convertView;
+    }
+
+    /**
+     * Remove all the bells and whistles from the graph instance
+     * @param chart
+     */
+    private static void setupLineChart(LineChart chart) {
+        final YAxis axis = chart.getAxisLeft();
 
         axis.setDrawLabels(false); // no axis labels
         axis.setDrawAxisLine(false); // no axis line
@@ -65,28 +89,27 @@ public class StockTickersAdapter extends ArrayAdapter<StockTicker> {
         chart.setNoDataText("Loading...");
         chart.setNoDataTextDescription("");
 
-        chart.setTouchEnabled(false);
-
-        setHistoricalGraphData(stockTicker, chart);
-
-        StockFetchManager.fetchStock(stockTicker, requestQueue, stockPrice);
-        StockFetchManager.fetchHistorical(stockTicker, requestQueue, chart);
-
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StockFetchManager.fetchStock(stockTicker, requestQueue, stockPrice);
-            }
-        });
-
-        return convertView;
+        chart.setTouchEnabled(false); // no extra bells and whistles
     }
 
-    public static void setHistoricalGraphData(StockTicker stockTicker, LineChart chart) {
-        LineDataSet lineDataSet = stockTicker.getHistoricalGraphData();
+    /**
+     * Make the graph very plain
+     * @param lineDataSet
+     */
+    private static void setupLineDataSet(LineDataSet lineDataSet) {
         lineDataSet.setColor(R.color.colorAccent);
         lineDataSet.setDrawCircles(false);
         lineDataSet.setDrawValues(false);
+    }
+
+    /**
+     * Update graph with new data
+     * @param stockTicker
+     * @param chart
+     */
+    public static void setHistoricalGraphData(StockTicker stockTicker, LineChart chart) {
+        LineDataSet lineDataSet = stockTicker.getHistoricalGraphData();
+        setupLineDataSet(lineDataSet);
         LineData lineData = new LineData(lineDataSet);
         chart.setData(lineData);
 

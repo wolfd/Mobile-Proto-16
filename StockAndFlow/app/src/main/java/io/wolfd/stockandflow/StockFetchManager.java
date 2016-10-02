@@ -34,6 +34,12 @@ public class StockFetchManager {
     private final static SimpleDateFormat queryDateFormat = new SimpleDateFormat("MMM d, yyyy", Locale.US);
     private final static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yy", Locale.US);
 
+    /**
+     * Fetch and set stock price and update view
+     * @param stockTicker
+     * @param requestQueue
+     * @param priceTextView
+     */
     public static void fetchStock(
             final StockTicker stockTicker,
             RequestQueue requestQueue,
@@ -77,6 +83,11 @@ public class StockFetchManager {
         requestQueue.add(stockRequest);
     }
 
+    /**
+     * Build the uri for the historical data CSV
+     * @param stockTicker
+     * @return
+     */
     private static String buildHistoricalUri(StockTicker stockTicker) {
         final Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -30);
@@ -95,7 +106,12 @@ public class StockFetchManager {
         return builder.build().toString();
     }
 
-
+    /**
+     * Get and parse CSV of historical stock data for past month
+     * @param stockTicker
+     * @param requestQueue
+     * @param chart
+     */
     public static void fetchHistorical(final StockTicker stockTicker,
                                        RequestQueue requestQueue,
                                        @Nullable final LineChart chart) {
@@ -120,10 +136,12 @@ public class StockFetchManager {
                                 historicalPrices.add(new HistoricalPrice(closingPrice, date));
                             }
 
+                            // CSV is reverse chronological
                             Collections.reverse(historicalPrices);
 
                             stockTicker.setHistoricalPrices(historicalPrices);
 
+                            // set the graph data immediately
                             if (chart != null) {
                                 StockTickersAdapter.setHistoricalGraphData(stockTicker, chart);
                             }
@@ -136,7 +154,7 @@ public class StockFetchManager {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // Handle error
+                        // TODO: Handle error
                     }
                 });
 

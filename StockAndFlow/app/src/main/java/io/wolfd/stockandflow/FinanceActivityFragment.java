@@ -33,6 +33,8 @@ public class FinanceActivityFragment extends Fragment {
 
         stockList.add(new StockTicker("AAPL", -1));
         stockList.add(new StockTicker("GOOG", -1));
+        stockList.add(new StockTicker("GOOGL", -1));
+        stockList.add(new StockTicker("NFLX", -1));
     }
 
     @Override
@@ -58,7 +60,7 @@ public class FinanceActivityFragment extends Fragment {
             public void onClick(View v) {
                 final EditText input = new EditText(context);
                 input.setHint("GOOG");
-                input.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+                input.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
 
                 // use the alert dialog builder to make the edit popup
                 final AlertDialog editDialog = new AlertDialog.Builder(context)
