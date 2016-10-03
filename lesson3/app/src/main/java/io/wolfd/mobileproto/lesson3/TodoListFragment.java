@@ -47,8 +47,9 @@ public class TodoListFragment extends Fragment {
         todoList.add((TextView) view.findViewById(R.id.textView5));
 
         // set the onclick listener for each of the textviews, pass the current context to each
+        // Yayyy for-each so pretty.
         for (TextView todo : todoList) {
-            todo.setOnClickListener(new TodoOnClickListener(getContext()));
+            todo.setOnClickListener(new TodoOnClickListener());
         }
 
         return view;

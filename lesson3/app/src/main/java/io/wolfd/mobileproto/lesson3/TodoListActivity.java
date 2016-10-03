@@ -42,6 +42,7 @@ public class TodoListActivity extends AppCompatActivity {
             }
 
             Bundle todoListBundle = new Bundle();
+            // Why use an empty bundle? Are you using this for later storage?
 
             // make the TodoListFragment, because we are going to swap it out later, we don't
             // want it to be in the XML
