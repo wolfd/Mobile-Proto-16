@@ -15,6 +15,13 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
+        /*
+        Using Butterknife's @OnCLick annotation with an array of view ids, you could probably
+        save a lot of code duplication here. It allows you to run the same block of code for
+        all the views, and in this case, you could include a switch-case (or something similar)
+        to achieve the same functionality with less repetition.
+         */
+
         // basic settings here.
         view.findViewById(R.id.button_background_blue).setOnClickListener(new View.OnClickListener() {
             @Override

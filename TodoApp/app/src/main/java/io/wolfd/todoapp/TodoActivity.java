@@ -96,6 +96,9 @@ public class TodoActivity extends AppCompatActivity {
      * @param color
      */
     public void setBackgroundColor(int color) {
+        /*
+        Makes sense, this is a fine implementation.
+         */
         getWindow().getDecorView().setBackgroundColor(color);
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
