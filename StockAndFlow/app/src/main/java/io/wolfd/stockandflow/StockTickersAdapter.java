@@ -52,11 +52,19 @@ public class StockTickersAdapter extends ArrayAdapter<StockTicker> {
 
         setHistoricalGraphData(stockTicker, chart);
 
+        /*
+        All operations within getView() should be as low-latency and efficient as possible
+        It looks like you recognized this by adding a note here, but it's pretty important.
+        While your list may be small to start off, if we consider the case where there's an arbitrarily
+        large number of items, getView() will be called pretty frequently - esp. during scrolling
+
+         */
         // Fire off network requests
         // TODO: move these to a better place, cache data better
         StockFetchManager.fetchStock(stockTicker, requestQueue, stockPrice);
         StockFetchManager.fetchHistorical(stockTicker, requestQueue, chart);
 
+        // This seems like kind of a strange thing to do
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

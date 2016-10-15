@@ -62,6 +62,10 @@ public class StockFetchManager {
                             // save value
                             stockTicker.setPrice(stockValue);
 
+                            /*
+                             This is definitely a little jank - you should probably call notifyItemChanged
+                             in the adapter, and let it handle updating its view
+                              */
                             // set text view immediately
                             if (priceTextView != null) {
                                 priceTextView.setText(stockTicker.getPriceString());

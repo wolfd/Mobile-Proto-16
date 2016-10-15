@@ -18,6 +18,7 @@ import com.android.volley.RequestQueue;
 
 import java.util.ArrayList;
 
+// Make sure you get rid of placeholder commments for boilerplate code like this
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -31,6 +32,7 @@ public class FinanceActivityFragment extends Fragment {
 
         stockList = new ArrayList<>();
 
+        // Cool, I like that you prepopulate with some data
         stockList.add(new StockTicker("AAPL", -1));
         stockList.add(new StockTicker("GOOG", -1));
         stockList.add(new StockTicker("GOOGL", -1));
@@ -55,11 +57,18 @@ public class FinanceActivityFragment extends Fragment {
 
         final Context context = getContext();
 
+        /*
+         A simple solution I'd probably implement first to the issue of having potentially latent operations
+         (network requests) in the getView() method of your adapter would be to fetch and set the stock data right on
+         your onClick of the dialog
+          */
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final EditText input = new EditText(context);
                 input.setHint("GOOG");
+                // Nice touch, good usability on defaulting to all caps
                 input.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
 
                 // use the alert dialog builder to make the edit popup

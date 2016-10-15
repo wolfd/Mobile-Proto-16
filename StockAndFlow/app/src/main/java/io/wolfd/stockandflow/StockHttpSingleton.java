@@ -6,6 +6,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+
+// Singleton implementation here looks good
 public class StockHttpSingleton {
     private static StockHttpSingleton mInstance;
     private RequestQueue mRequestQueue;
